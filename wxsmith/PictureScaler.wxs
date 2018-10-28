@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="PictureScaler">
+		<title>Image scale settings</title>
+		<centered>1</centered>
+		<id_arg>0</id_arg>
+		<style>wxDEFAULT_FRAME_STYLE|wxFRAME_FLOAT_ON_PARENT</style>
+		<handler function="OnClose" entry="EVT_CLOSE" />
+		<object class="wxBoxSizer" variable="BoxSizer1" member="no">
+			<object class="sizeritem">
+				<object class="wxBoxSizer" variable="BoxSizer2" member="no">
+					<object class="sizeritem">
+						<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
+							<style>wxSIMPLE_BORDER|wxTAB_TRAVERSAL</style>
+							<handler function="OnImagePaint" entry="EVT_PAINT" />
+							<handler function="StartDrag" entry="EVT_LEFT_DOWN" />
+							<handler function="StopDrag" entry="EVT_LEFT_UP" />
+							<handler function="CancelByRightClick" entry="EVT_RIGHT_DOWN" />
+							<handler function="OnDragging" entry="EVT_MOTION" />
+							<handler function="OnMouseWheel" entry="EVT_MOUSEWHEEL" />
+							<handler function="ImageResize" entry="EVT_SIZE" />
+						</object>
+						<flag>wxALL|wxEXPAND</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+				</object>
+				<flag>wxALL|wxEXPAND</flag>
+				<border>5</border>
+				<option>1</option>
+			</object>
+			<object class="sizeritem">
+				<object class="wxBoxSizer" variable="BoxSizer3" member="no">
+					<orient>wxVERTICAL</orient>
+					<object class="sizeritem">
+						<object class="wxBoxSizer" variable="BoxSizer4" member="no">
+							<object class="sizeritem">
+								<object class="wxBitmapButton" name="ID_BITMAPBUTTON1" variable="BitmapButton1" member="yes">
+									<bitmap code="GetIcon(calibrate_xy_png, calibrate_xy_png_size)" />
+									<size>48,48</size>
+									<handler function="PickStartXY" entry="EVT_BUTTON" />
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+							</object>
+							<object class="sizeritem">
+								<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+									<label>x0=</label>
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+							</object>
+							<object class="sizeritem">
+								<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrl1" member="yes">
+									<value>0</value>
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+								<option>1</option>
+							</object>
+							<object class="sizeritem">
+								<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
+									<label>y0=</label>
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+							</object>
+							<object class="sizeritem">
+								<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextCtrl2" member="yes">
+									<value>0</value>
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+								<option>1</option>
+							</object>
+						</object>
+						<flag>wxALL|wxALIGN_LEFT</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBoxSizer" variable="BoxSizer5" member="no">
+							<object class="sizeritem">
+								<object class="wxBitmapButton" name="ID_BITMAPBUTTON2" variable="BitmapButton2" member="yes">
+									<bitmap code="GetIcon(calibrate_x_png, calibrate_x_png_size)" />
+									<size>48,48</size>
+									<enabled>0</enabled>
+									<handler function="PickX" entry="EVT_BUTTON" />
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+							</object>
+							<object class="sizeritem">
+								<object class="wxStaticText" name="ID_STATICTEXT3" variable="StaticText3" member="yes">
+									<label>y0; x=</label>
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+							</object>
+							<object class="sizeritem">
+								<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="TextCtrl3" member="yes">
+									<value>10</value>
+									<enabled>0</enabled>
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+								<option>1</option>
+							</object>
+						</object>
+						<flag>wxALL|wxALIGN_LEFT</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBoxSizer" variable="BoxSizer6" member="no">
+							<object class="sizeritem">
+								<object class="wxBitmapButton" name="ID_BITMAPBUTTON3" variable="BitmapButton3" member="yes">
+									<bitmap code="GetIcon(calibrate_y_png, calibrate_y_png_size)" />
+									<size>48,48</size>
+									<enabled>0</enabled>
+									<handler function="PickY" entry="EVT_BUTTON" />
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+							</object>
+							<object class="sizeritem">
+								<object class="wxStaticText" name="ID_STATICTEXT4" variable="StaticText4" member="yes">
+									<label>x0; y=</label>
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+							</object>
+							<object class="sizeritem">
+								<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="TextCtrl4" member="yes">
+									<value>10</value>
+									<enabled>0</enabled>
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+								<option>1</option>
+							</object>
+						</object>
+						<flag>wxALL|wxALIGN_LEFT</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBoxSizer" variable="BoxSizer8" member="no">
+							<orient>wxVERTICAL</orient>
+							<object class="sizeritem">
+								<object class="wxCheckBox" name="ID_CHECKBOX1" variable="CheckBox1" member="yes">
+									<label>Logarithmic X</label>
+									<handler function="OnSetXLogarithmic" entry="EVT_CHECKBOX" />
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+								<option>1</option>
+							</object>
+							<object class="sizeritem">
+								<object class="wxCheckBox" name="ID_CHECKBOX2" variable="CheckBox2" member="yes">
+									<label>Logarithmic Y</label>
+									<handler function="OnSetYLogarithmic" entry="EVT_CHECKBOX" />
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+								<option>1</option>
+							</object>
+						</object>
+						<flag>wxALL|wxALIGN_LEFT</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBoxSizer" variable="BoxSizer7" member="no">
+							<object class="sizeritem">
+								<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
+									<label>Cancel</label>
+									<handler function="OnCancelClick" entry="EVT_BUTTON" />
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+								<option>1</option>
+							</object>
+							<object class="sizeritem">
+								<object class="wxButton" name="ID_BUTTON2" variable="Button2" member="yes">
+									<label>OK</label>
+									<enabled>0</enabled>
+									<handler function="OnPressOK" entry="EVT_BUTTON" />
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+								<option>1</option>
+							</object>
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+				</object>
+				<flag>wxALL|wxALIGN_TOP</flag>
+				<border>5</border>
+			</object>
+		</object>
+	</object>
+</wxsmith>

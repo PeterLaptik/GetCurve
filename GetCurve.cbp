@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="GetCurve" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Release/GetCurve" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="tdm_gcc_32_compiler" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="../../../../../wxWidgets-3.1.0/include" />
+					<Add directory="../../../../../wxWidgets-3.1.0/lib/gcc_dll/mswu" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="C:/wxWidgets-3.1.0_static/lib/gcc_lib/mswu" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-mthreads" />
+					<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxexpat.a" />
+					<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxjpeg.a" />
+					<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxmsw31u.a" />
+					<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxmsw31u_gl.a" />
+					<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxpng.a" />
+					<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxregexu.a" />
+					<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxscintilla.a" />
+					<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxtiff.a" />
+					<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxzlib.a" />
+					<Add directory="C:/wxWidgets-3.1.0_static/lib/gcc_lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-pipe" />
+			<Add option="-mthreads" />
+			<Add option="-D__GNUWIN32__" />
+			<Add option="-D__WXMSW__" />
+			<Add option="-DwxUSE_UNICODE" />
+			<Add directory="../../../../../wxWidgets-3.1.0/include" />
+			<Add directory="../../../../../wxWidgets-3.1.0/lib/gcc_dll/mswu" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="C:/wxWidgets-3.1.0_static/include" />
+		</ResourceCompiler>
+		<Linker>
+			<Add option="-mthreads" />
+			<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxexpat.a" />
+			<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxjpeg.a" />
+			<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxmsw31u.a" />
+			<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxmsw31u_gl.a" />
+			<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxpng.a" />
+			<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxregexu.a" />
+			<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxscintilla.a" />
+			<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxtiff.a" />
+			<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxzlib.a" />
+		</Linker>
+		<Unit filename="calc/entity.h" />
+		<Unit filename="calc/polinom.cpp" />
+		<Unit filename="calc/polinom.h" />
+		<Unit filename="controls/imageCurve.cpp" />
+		<Unit filename="controls/imageCurve.h" />
+		<Unit filename="controls/wxCurvePanel.cpp" />
+		<Unit filename="controls/wxCurvePanel.h" />
+		<Unit filename="controls/wxPanelGraph.cpp" />
+		<Unit filename="controls/wxPanelGraph.h" />
+		<Unit filename="dialogues/AboutWindow.cpp" />
+		<Unit filename="dialogues/AboutWindow.h" />
+		<Unit filename="dialogues/CFunctionName.cpp" />
+		<Unit filename="dialogues/CFunctionName.h" />
+		<Unit filename="dialogues/ColorSettings.cpp" />
+		<Unit filename="dialogues/ColorSettings.h" />
+		<Unit filename="dialogues/CustomScale.cpp" />
+		<Unit filename="dialogues/CustomScale.h" />
+		<Unit filename="dialogues/PictureScaler.cpp" />
+		<Unit filename="dialogues/PictureScaler.h" />
+		<Unit filename="main/GetCurveApp.cpp" />
+		<Unit filename="main/GetCurveApp.h" />
+		<Unit filename="main/GetCurveMain.cpp" />
+		<Unit filename="main/GetCurveMain.h" />
+		<Unit filename="main/GetCurveMainIO.cpp" />
+		<Unit filename="main/GetCurveMainReports.cpp" />
+		<Unit filename="odt_creator/include/OdtCreator.h" />
+		<Unit filename="odt_creator/include/OdtTable.h" />
+		<Unit filename="odt_creator/include/OdtTemplateArray.h" />
+		<Unit filename="odt_creator/include/OdtXmlMeta.h" />
+		<Unit filename="odt_creator/include/OdtXmlNodes.h" />
+		<Unit filename="odt_creator/include/OdtZipDirTraverser.h" />
+		<Unit filename="odt_creator/src/OdtCreator.cpp" />
+		<Unit filename="odt_creator/src/OdtCreatorArch.cpp" />
+		<Unit filename="odt_creator/src/OdtCreatorDriver.cpp" />
+		<Unit filename="odt_creator/src/OdtCreatorTemplates.cpp" />
+		<Unit filename="odt_creator/src/OdtFormula.cpp" />
+		<Unit filename="odt_creator/src/OdtImages.cpp" />
+		<Unit filename="odt_creator/src/OdtTable.cpp" />
+		<Unit filename="res/icons.h" />
+		<Unit filename="res/iconsScaleDialog.h" />
+		<Unit filename="res/picsAboutWindow.h" />
+		<Unit filename="resource.h" />
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="toolboxes/PolynomialWindow.cpp" />
+		<Unit filename="toolboxes/PolynomialWindow.h" />
+		<Unit filename="wxsmith/AboutWindow.wxs" />
+		<Unit filename="wxsmith/CFunctionName.wxs" />
+		<Unit filename="wxsmith/ColorSettings.wxs" />
+		<Unit filename="wxsmith/CustomScale.wxs" />
+		<Unit filename="wxsmith/GetCurveframe.wxs" />
+		<Unit filename="wxsmith/PictureScaler.wxs" />
+		<Unit filename="wxsmith/PolynomialWindow.wxs" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="main\GetCurveApp.cpp" main="-- None --" init_handlers="never" language="CPP" />
+				<resources>
+					<wxFrame wxs="wxsmith/GetCurveframe.wxs" src="main/GetCurveMain.cpp" hdr="main/GetCurveMain.h" fwddecl="0" i18n="1" name="GetCurveFrame" language="CPP" />
+					<wxFrame wxs="wxsmith/PictureScaler.wxs" src="dialogues/PictureScaler.cpp" hdr="dialogues/PictureScaler.h" fwddecl="0" i18n="1" name="PictureScaler" language="CPP" />
+					<wxDialog wxs="wxsmith/ColorSettings.wxs" src="dialogues/ColorSettings.cpp" hdr="dialogues/ColorSettings.h" fwddecl="0" i18n="1" name="ColorSettings" language="CPP" />
+					<wxFrame wxs="wxsmith/PolynomialWindow.wxs" src="toolboxes/PolynomialWindow.cpp" hdr="toolboxes/PolynomialWindow.h" fwddecl="0" i18n="1" name="PolynomialWindow" language="CPP" />
+					<wxDialog wxs="wxsmith/CFunctionName.wxs" src="dialogues/CFunctionName.cpp" hdr="dialogues/CFunctionName.h" fwddecl="0" i18n="1" name="CFunctionName" language="CPP" />
+					<wxDialog wxs="wxsmith/CustomScale.wxs" src="dialogues/CustomScale.cpp" hdr="dialogues/CustomScale.h" fwddecl="0" i18n="1" name="CustomScale" language="CPP" />
+					<wxDialog wxs="wxsmith/AboutWindow.wxs" src="dialogues/AboutWindow.cpp" hdr="dialogues/AboutWindow.h" fwddecl="0" i18n="1" name="AboutWindow" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

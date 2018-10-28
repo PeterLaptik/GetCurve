@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="GetCurveFrame">
+		<title>GetCurve</title>
+		<centered>1</centered>
+		<icon code="GetIcon(logo_png, logo_png_size)" />
+		<size>591,516</size>
+		<id_arg>0</id_arg>
+		<handler function="OnClose" entry="EVT_CLOSE" />
+		<object class="wxBoxSizer" variable="BoxSizer1" member="no">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<object class="wxSplitterWindow" name="ID_SPLITTERWINDOW1" variable="SplitterWindow1" member="yes">
+					<sashpos>100</sashpos>
+					<sashgravity>0.000000</sashgravity>
+					<minpanesize>10</minpanesize>
+					<orientation>vertical</orientation>
+					<size>640,640</size>
+					<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
+						<style>wxSUNKEN_BORDER|wxTAB_TRAVERSAL</style>
+						<object class="wxBoxSizer" variable="BoxSizer2" member="no">
+							<orient>wxVERTICAL</orient>
+							<object class="sizeritem">
+								<object class="wxBoxSizer" variable="BoxSizer4" member="no">
+									<orient>wxVERTICAL</orient>
+									<object class="sizeritem">
+										<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
+											<label>Points&apos; coordinates:</label>
+										</object>
+										<flag>wxTOP|wxLEFT|wxRIGHT</flag>
+										<border>16</border>
+									</object>
+									<object class="sizeritem">
+										<object class="wxGrid" name="ID_GRID1" variable="Grid1" member="yes">
+											<cols>2</cols>
+											<rows>20</rows>
+											<collabels>
+												<item>x</item>
+												<item>y(x)</item>
+											</collabels>
+											<handler function="InputPoint" entry="EVT_CMD_GRID_CELL_CHANGED" />
+											<handler function="CellSelect" entry="EVT_CMD_GRID_SELECT_CELL" />
+										</object>
+										<flag>wxLEFT|wxRIGHT|wxEXPAND</flag>
+										<border>16</border>
+									</object>
+								</object>
+								<flag>wxALL|wxFIXED_MINSIZE</flag>
+								<border>5</border>
+							</object>
+							<object class="sizeritem">
+								<object class="wxBoxSizer" variable="BoxSizer3" member="no">
+									<object class="sizeritem">
+										<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+											<label>Number of points:</label>
+										</object>
+										<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+										<border>5</border>
+										<option>1</option>
+									</object>
+									<object class="sizeritem">
+										<object class="wxSpinCtrl" name="ID_SPINCTRL1" variable="SpinCtrl1" member="yes">
+											<value>2</value>
+											<min>2</min>
+											<max>20</max>
+											<size>41,24</size>
+											<handler function="PointChanged" entry="EVT_SPINCTRL" />
+										</object>
+										<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+										<border>5</border>
+										<option>1</option>
+									</object>
+								</object>
+								<flag>wxBOTTOM|wxLEFT|wxRIGHT</flag>
+								<border>16</border>
+							</object>
+						</object>
+					</object>
+					<object class="wxPanel" name="ID_PANEL2" variable="Panel2" member="yes">
+						<style>wxSUNKEN_BORDER|wxTAB_TRAVERSAL</style>
+						<object class="wxBoxSizer" variable="BoxSizer5" member="no">
+							<object class="sizeritem">
+								<object class="wxPanel" name="ID_PANEL4" subclass="CurvePanel" variable="PanelGraph" member="yes">
+									<style>wxSIMPLE_BORDER|wxTAB_TRAVERSAL</style>
+									<handler function="ClearSelected" entry="EVT_LEFT_DCLICK" />
+									<handler function="OnPanelGraphMenu" entry="EVT_RIGHT_DOWN" />
+								</object>
+								<flag>wxALL|wxEXPAND</flag>
+								<border>5</border>
+								<option>1</option>
+							</object>
+							<object class="sizeritem">
+								<object class="wxBoxSizer" variable="BoxSizer6" member="no">
+									<object class="sizeritem">
+										<object class="wxBoxSizer" variable="BoxSizer7" member="no">
+											<orient>wxVERTICAL</orient>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON5" variable="BitmapButton5" member="yes">
+													<bitmap code="GetIcon(zoom_in_png, zoom_in_png_size)" />
+													<tooltip>Zoom in</tooltip>
+													<handler function="ZoomIn" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_LEFT</flag>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON6" variable="BitmapButton6" member="yes">
+													<bitmap code="GetIcon(zoom_out_png, zoom_out_png_size)" />
+													<tooltip>Zoom out</tooltip>
+													<handler function="ZoomOut" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_LEFT</flag>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON1" variable="BitmapButton1" member="yes">
+													<bitmap code="GetIcon(trim_to_1_png, trim_to_1_png_size)" />
+													<tooltip>Trim to curve</tooltip>
+													<style>wxBU_AUTODRAW|wxRAISED_BORDER</style>
+													<handler function="TrimToCurve" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_LEFT</flag>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON2" variable="BitmapButton2" member="yes">
+													<bitmap code="GetIcon(center_zero_png, center_zero_png_size)" />
+													<tooltip>Center zero</tooltip>
+													<handler function="TrimToZero" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_LEFT</flag>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON7" variable="BitmapButton7" member="yes">
+													<bitmap code="GetIcon(reset_scale_png, reset_scale_png_size)" />
+													<tooltip>Reset scale</tooltip>
+													<handler function="ScaleReset" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_LEFT</flag>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON12" variable="BitmapButton12" member="yes">
+													<bitmap code="GetIcon(show_hide_image_png, show_hide_image_png_size)" />
+													<tooltip>Show/hide image</tooltip>
+													<handler function="HideShowImage" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_LEFT</flag>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON3" variable="BitmapButton3" member="yes">
+													<bitmap code="GetIcon(pick_point_png, pick_point_png_size)" />
+													<tooltip>Pick selected point</tooltip>
+													<handler function="PickPoint" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxTOP</flag>
+												<border>8</border>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON4" variable="BitmapButton4" member="yes">
+													<bitmap code="GetIcon(pick_multi_point_png, pick_multi_point_png_size)" />
+													<tooltip>Pick point set</tooltip>
+													<handler function="PickMultiPoint" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_LEFT</flag>
+											</object>
+										</object>
+										<flag>wxALL|wxALIGN_TOP</flag>
+										<border>5</border>
+									</object>
+									<object class="sizeritem">
+										<object class="wxBoxSizer" variable="BoxSizer8" member="no">
+											<orient>wxVERTICAL</orient>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON9" variable="BitmapButton9" member="yes">
+													<bitmap code="GetIcon(y_ratio_png, y_ratio_png_size)" />
+													<tooltip>Proportional scale: trim to y</tooltip>
+													<handler function="TrimRatioPerY" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_LEFT</flag>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON8" variable="BitmapButton8" member="yes">
+													<bitmap code="GetIcon(x_ratio_png, x_ratio_png_size)" />
+													<tooltip>Proportional scale: trim to x</tooltip>
+													<handler function="TrimRatioPerX" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_LEFT</flag>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON10" variable="BitmapButton10" member="yes">
+													<bitmap code="GetIcon(log10Y_more_png, log10Y_more_png_size)" />
+													<enabled>0</enabled>
+													<tooltip>Move up left border</tooltip>
+													<handler function="IncrementLogLeftBorder" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_LEFT</flag>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON11" variable="BitmapButton11" member="yes">
+													<bitmap code="GetIcon(log10_less_png, log10_less_png_size)" />
+													<enabled>0</enabled>
+													<tooltip>Move down left border</tooltip>
+													<handler function="DecrementLogBorder" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_LEFT</flag>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON13" variable="BitmapButton13" member="yes">
+													<bitmap code="GetIcon(logarithmic_png, logarithmic_png_size)" />
+													<tooltip>Logarithmic coordinates</tooltip>
+													<handler function="MakeLogarithmicCoordinates" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_LEFT</flag>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON14" variable="BitmapButton14" member="yes">
+													<bitmap code="GetIcon(linear_png, linear_png_size)" />
+													<tooltip>Linear coordinates</tooltip>
+													<handler function="MakeLinearCoordinates" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_LEFT</flag>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON15" variable="BitmapButton15" member="yes">
+													<bitmap code="GetIcon(coefficients_png, coefficients_png_size)" />
+													<tooltip>Show/hide coefficients</tooltip>
+													<handler function="ShowOrHideCoefficientWindow" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxTOP|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+												<border>8</border>
+												<option>1</option>
+											</object>
+											<object class="sizeritem">
+												<object class="wxBitmapButton" name="ID_BITMAPBUTTON16" variable="BitmapButton16" member="yes">
+													<bitmap code="GetIcon(sort_png, sort_png_size)" />
+													<tooltip>Sort points</tooltip>
+													<handler function="SortPointsMenu" entry="EVT_BUTTON" />
+												</object>
+												<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											</object>
+										</object>
+										<flag>wxALL|wxALIGN_TOP</flag>
+										<border>5</border>
+									</object>
+								</object>
+								<flag>wxALL|wxALIGN_TOP</flag>
+								<border>5</border>
+							</object>
+						</object>
+					</object>
+				</object>
+				<flag>wxALL|wxEXPAND|wxFIXED_MINSIZE</flag>
+				<border>5</border>
+				<option>1</option>
+			</object>
+		</object>
+		<object class="wxMenuBar" variable="MenuBar1" member="no">
+			<object class="wxMenu" variable="Menu1" member="no">
+				<label>&amp;File</label>
+				<object class="wxMenuItem" name="idMenuFileNew" variable="MenuItem27" member="yes">
+					<label>New</label>
+					<bitmap stock_id="wxART_NEW" />
+					<handler function="FileNew" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuOpenFile" variable="MenuItem28" member="yes">
+					<label>Open</label>
+					<bitmap stock_id="wxART_FILE_OPEN" />
+					<handler function="OpenFile" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuSaveFile" variable="MenuItem29" member="yes">
+					<label>Save</label>
+					<bitmap stock_id="wxART_FILE_SAVE" />
+					<handler function="SaveFile" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuSaveFileAs" variable="MenuItem30" member="yes">
+					<label>Save as</label>
+					<bitmap stock_id="wxART_FILE_SAVE_AS" />
+					<handler function="SaveFileAs" entry="EVT_MENU" />
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="idMenuAddImage" variable="MenuItem31" member="yes">
+					<label>Import image</label>
+					<bitmap code="GetIcon(toolbar_load_image_png, toolbar_load_image_png_size)" />
+					<handler function="LoadUnderlayerPicture" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenu" name="idMenuExport" variable="MenuItem32" member="yes">
+					<label>Export data as</label>
+					<object class="wxMenuItem" name="idMenuExportPNG" variable="MenuItem34" member="yes">
+						<label>PNG snapshot</label>
+						<bitmap code="GetIcon(toolbar_export_image_png, toolbar_export_image_png_size)" />
+						<handler function="MakeScreenSnapshot" entry="EVT_MENU" />
+					</object>
+					<object class="wxMenuItem" name="idMenuExportC" variable="MenuItem35" member="yes">
+						<label>C function</label>
+						<bitmap code="GetIcon(toolbar_export_C_png, toolbar_export_C_png_size)" />
+						<handler function="ExportCFunction" entry="EVT_MENU" />
+					</object>
+					<object class="wxMenuItem" name="idMenuExportCVS" variable="MenuItem36" member="yes">
+						<label>CVS table</label>
+						<bitmap code="GetIcon(toolbar_export_CSV_png, toolbar_export_CSV_png_size)" />
+						<handler function="ExportCSVTable" entry="EVT_MENU" />
+					</object>
+					<object class="wxMenuItem" name="idMenuExportOdt" variable="MenuItem37" member="yes">
+						<label>ODT report</label>
+						<bitmap code="GetIcon(toolbar_export_ODT_png, toolbar_export_ODT_png_size)" />
+					</object>
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="idMenuQuit" variable="MenuItem1" member="no">
+					<label>Quit</label>
+					<accel>Alt-F4</accel>
+					<help>Quit the application</help>
+					<bitmap stock_id="wxART_QUIT" />
+					<handler function="OnQuit" entry="EVT_MENU" />
+				</object>
+			</object>
+			<object class="wxMenu" variable="Menu4" member="yes">
+				<label>Edit</label>
+				<object class="wxMenuItem" name="idMenuStop" variable="MenuItem21" member="yes">
+					<label>Stop command</label>
+					<bitmap code="GetIcon(toolbar_stop_command_png, toolbar_stop_command_png_size)" />
+					<handler function="StopCommandPopUpMenu" entry="EVT_MENU" />
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="idMenuPickPoint" variable="MenuItem18" member="yes">
+					<label>Pick point</label>
+					<bitmap code="GetIcon(toolbar_pick_point_png, toolbar_pick_point_png_size)" />
+					<handler function="PickPoint" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuPickPointSet" variable="MenuItem19" member="yes">
+					<label>Pick set of points</label>
+					<bitmap code="GetIcon(toolbar_pick_multi_point_png, toolbar_pick_multi_point_png_size)" />
+					<handler function="PickMultiPoint" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuSortPoints" variable="MenuItem26" member="yes">
+					<label>Sort points</label>
+					<bitmap code="GetIcon(toolbar_sort_png, toolbar_sort_png_size)" />
+					<handler function="SortPointsMenu" entry="EVT_MENU" />
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="idMenuRescalePicture" variable="MenuItem39" member="yes">
+					<label>Rescale image</label>
+					<bitmap code="GetIcon(toolbar_rescale_image_png, toolbar_rescale_image_png_size)" />
+					<handler function="RescaleImage" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuRemoveImage" variable="MenuItem40" member="yes">
+					<label>Remove image</label>
+					<bitmap code="GetIcon(toolbar_remove_image_png, toolbar_remove_image_png_size)" />
+					<handler function="RemoveUnderLayerImage" entry="EVT_MENU" />
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="idMenuDeletePoint" variable="MenuItem38" member="yes">
+					<label>Delete point</label>
+					<bitmap code="GetIcon(toolbar_delete_point_png, toolbar_delete_point_png_size)" />
+					<handler function="DeletePoint" entry="EVT_MENU" />
+				</object>
+			</object>
+			<object class="wxMenu" variable="Menu3" member="yes">
+				<label>View</label>
+				<object class="wxMenuItem" name="idMenuRefresh" variable="MenuItem8" member="yes">
+					<label>Refresh</label>
+					<bitmap stock_id="wxART_REDO" />
+					<handler function="RefreshPanel" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenu" name="idMenuShow" variable="MenuItem42" member="yes">
+					<label>Show</label>
+					<object class="wxMenuItem" name="idShowHor" variable="MenuItem43" member="yes">
+						<label>Show horizontal lines</label>
+						<checked>1</checked>
+						<handler function="ShowHorizontalLines" entry="EVT_MENU" />
+						<checkable>1</checkable>
+					</object>
+					<object class="wxMenuItem" name="idShowVert" variable="MenuItem44" member="yes">
+						<label>Show vertical lines</label>
+						<checked>1</checked>
+						<handler function="ShowVerticalLines" entry="EVT_MENU" />
+						<checkable>1</checkable>
+					</object>
+					<object class="wxMenuItem" name="idShowZero" variable="MenuItem45" member="yes">
+						<label>Show zero lines</label>
+						<checked>1</checked>
+						<handler function="ShowZeroLines" entry="EVT_MENU" />
+						<checkable>1</checkable>
+					</object>
+					<object class="wxMenuItem" name="idShowHorAdds" variable="MenuItem46" member="yes">
+						<label>Show horizontal extralines</label>
+						<checked>1</checked>
+						<handler function="ShowHorizontalExtraLines" entry="EVT_MENU" />
+						<checkable>1</checkable>
+					</object>
+					<object class="wxMenuItem" name="idShowVertAdds" variable="MenuItem47" member="yes">
+						<label>Show vertical extralines</label>
+						<checked>1</checked>
+						<handler function="ShowVerticalExtraLines" entry="EVT_MENU" />
+						<checkable>1</checkable>
+					</object>
+					<object class="wxMenuItem" name="idMenuShowAll" variable="MenuItem49" member="yes">
+						<label>Show all</label>
+						<handler function="ShowAllLines" entry="EVT_MENU" />
+					</object>
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="idMenuZoomIn" variable="MenuItem11" member="yes">
+					<label>Zoom in</label>
+					<bitmap code="GetIcon(toolbar_zoom_in_png, toolbar_zoom_in_png_size)" />
+					<handler function="ZoomIn" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuZoomOut" variable="MenuItem12" member="yes">
+					<label>Zoom out</label>
+					<bitmap code="GetIcon(toolbar_zoom_out_png, toolbar_zoom_out_png_size)" />
+					<handler function="ZoomOut" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuTrimScale" variable="MenuItem14" member="yes">
+					<label>Trim to curve</label>
+					<bitmap code="GetIcon(toolbar_trim_to_curve_png, toolbar_trim_to_curve_png_size)" />
+					<handler function="TrimToCurve" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuCenterZero" variable="MenuItem15" member="yes">
+					<label>Move zero to center</label>
+					<bitmap code="GetIcon(toolbar_center_zero_png, toolbar_center_zero_png_size)" />
+					<handler function="TrimToZero" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuInitialScale" variable="MenuItem13" member="yes">
+					<label>Reset scale</label>
+					<bitmap code="GetIcon(toolbar_reset_scale_png, toolbar_reset_scale_png_size)" />
+					<handler function="ScaleReset" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idTrimToImage" variable="MenuItem41" member="yes">
+					<label>Trim to image</label>
+					<bitmap code="GetIcon(toolbar_trim_to_image_png, toolbar_trim_to_image_png_size)" />
+					<handler function="TrimToImage" entry="EVT_MENU" />
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="idMenuLogX" variable="MenuItem9" member="yes">
+					<label>Logarithmic X-axis</label>
+					<handler function="SetLogarithmicX" entry="EVT_MENU" />
+					<checkable>1</checkable>
+				</object>
+				<object class="wxMenuItem" name="idMenuLogY" variable="MenuItem10" member="yes">
+					<label>Logarithmic Y-axis</label>
+					<handler function="SetLogarithmicY" entry="EVT_MENU" />
+					<checkable>1</checkable>
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="idMenuLockX" variable="MenuItem16" member="yes">
+					<label>Lock scale X</label>
+					<handler function="LockXScale" entry="EVT_MENU" />
+					<checkable>1</checkable>
+				</object>
+				<object class="wxMenuItem" name="idMenuLockY" variable="MenuItem17" member="yes">
+					<label>Lock scale Y</label>
+					<handler function="LockYScale" entry="EVT_MENU" />
+					<checkable>1</checkable>
+				</object>
+				<object class="wxMenuItem" name="idLockDrag" variable="MenuItem48" member="yes">
+					<label>Lock for drag</label>
+					<handler function="LockScreenDrag" entry="EVT_MENU" />
+					<checkable>1</checkable>
+				</object>
+			</object>
+			<object class="wxMenu" variable="Menu6" member="yes">
+				<label>Results</label>
+				<object class="wxMenuItem" name="idMenuPolynomialShow" variable="MenuItem22" member="yes">
+					<label>Show/hide coefficients</label>
+					<bitmap code="GetIcon(toolbar_coefficients_png, toolbar_coefficients_png_size)" />
+					<handler function="ShowOrHideCoefficientWindow" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuSnapShot" variable="MenuItem23" member="yes">
+					<label>Make snaphot (.png)</label>
+					<bitmap code="GetIcon(toolbar_export_image_png, toolbar_export_image_png_size)" />
+					<handler function="MakeScreenSnapshot" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuExportFunction" variable="MenuItem24" member="yes">
+					<label>Export function (.c)</label>
+					<bitmap code="GetIcon(toolbar_export_C_png, toolbar_export_C_png_size)" />
+					<handler function="ExportCFunction" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuExportCSV" variable="MenuItem33" member="yes">
+					<label>Export table (.csv)</label>
+					<bitmap code="GetIcon(toolbar_export_CSV_png, toolbar_export_CSV_png_size)" />
+					<handler function="ExportCSVTable" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuMakeReport" variable="MenuItem25" member="yes">
+					<label>Create report (.odt)</label>
+					<bitmap code="GetIcon(toolbar_export_ODT_png, toolbar_export_ODT_png_size)" />
+					<handler function="SaveOdtReport" entry="EVT_MENU" />
+				</object>
+			</object>
+			<object class="wxMenu" variable="Menu5" member="yes">
+				<label>Settings</label>
+				<object class="wxMenuItem" name="idMenuColours" variable="MenuItem20" member="yes">
+					<label>Appearance</label>
+					<bitmap code="GetIcon(toolbar_settings_png, toolbar_settings_png_size)" />
+					<handler function="ChangeColors" entry="EVT_MENU" />
+				</object>
+			</object>
+			<object class="wxMenu" variable="Menu2" member="no">
+				<label>Help</label>
+				<object class="wxMenuItem" name="idMenuAbout" variable="MenuItem2" member="no">
+					<label>About</label>
+					<accel>F1</accel>
+					<help>Show info about this application</help>
+					<bitmap code="GetIcon(toolbar_about_png, toolbar_about_png_size)" />
+					<handler function="OnAbout" entry="EVT_MENU" />
+				</object>
+			</object>
+		</object>
+		<object class="wxStatusBar" name="ID_STATUSBAR1" variable="StatusBar1" member="yes">
+			<fields>4</fields>
+			<widths>-10,-10,-10,-10</widths>
+			<styles>wxSB_NORMAL,wxSB_NORMAL,wxSB_NORMAL,wxSB_NORMAL</styles>
+		</object>
+		<object class="wxToolBar" name="ID_TOOLBAR1" variable="ToolBar1" member="yes">
+			<object class="tool" name="1100" variable="ToolBarItem1" member="yes">
+				<label>New file</label>
+				<bitmap stock_id="wxART_NEW" />
+				<tooltip>New file</tooltip>
+				<handler function="FileNew" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1101" variable="ToolBarItem2" member="yes">
+				<label>Open file</label>
+				<bitmap stock_id="wxART_FILE_OPEN" />
+				<tooltip>Open file</tooltip>
+				<handler function="OpenFile" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1102" variable="ToolBarItem3" member="yes">
+				<label>Save file</label>
+				<bitmap stock_id="wxART_FILE_SAVE" />
+				<tooltip>Save file</tooltip>
+				<handler function="SaveFile" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1103" variable="ToolBarItem5" member="yes">
+				<label>Save As</label>
+				<bitmap stock_id="wxART_FILE_SAVE_AS" />
+				<tooltip>Save file as</tooltip>
+				<handler function="SaveFileAs" entry="EVT_TOOL" />
+			</object>
+			<object class="separator" />
+			<object class="tool" name="1104" variable="ToolBarItem6" member="yes">
+				<label>Import image</label>
+				<bitmap code="GetIcon(toolbar_load_image_png, toolbar_load_image_png_size)" />
+				<tooltip>Import image</tooltip>
+				<handler function="LoadUnderlayerPicture" entry="EVT_TOOL" />
+			</object>
+			<object class="separator" />
+			<object class="tool" name="1401" variable="ToolBarItem18" member="yes">
+				<label>Add point</label>
+				<bitmap code="GetIcon(toolbar_pick_point_png, toolbar_pick_point_png_size)" />
+				<tooltip>Pick point</tooltip>
+				<handler function="PickPoint" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1402" variable="ToolBarItem19" member="yes">
+				<label>Add point set</label>
+				<bitmap code="GetIcon(toolbar_pick_multi_point_png, toolbar_pick_multi_point_png_size)" />
+				<tooltip>Pick point set</tooltip>
+				<handler function="PickMultiPoint" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1403" variable="ToolBarItem20" member="yes">
+				<label>Sort points</label>
+				<bitmap code="GetIcon(toolbar_sort_png, toolbar_sort_png_size)" />
+				<tooltip>Sort points</tooltip>
+				<handler function="SortPointsMenu" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1404" variable="ToolBarItem21" member="yes">
+				<label>Stop command</label>
+				<bitmap code="GetIcon(toolbar_stop_command_png, toolbar_stop_command_png_size)" />
+				<tooltip>Stop command</tooltip>
+				<handler function="StopCommandPopUpMenu" entry="EVT_TOOL" />
+			</object>
+			<object class="separator" />
+			<object class="tool" name="1201" variable="ToolBarItem8" member="yes">
+				<label>Zoom In</label>
+				<bitmap code="GetIcon(toolbar_zoom_in_png, toolbar_zoom_in_png_size)" />
+				<tooltip>Zoom in</tooltip>
+				<handler function="ZoomIn" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1202" variable="ToolBarItem7" member="yes">
+				<label>Zoom Out</label>
+				<bitmap code="GetIcon(toolbar_zoom_out_png, toolbar_zoom_out_png_size)" />
+				<tooltip>Zoom out</tooltip>
+				<handler function="ZoomOut" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1204" variable="ToolBarItem10" member="yes">
+				<label>Trim to curve</label>
+				<bitmap code="GetIcon(toolbar_trim_to_curve_png, toolbar_trim_to_curve_png_size)" />
+				<tooltip>Trim to curve</tooltip>
+				<handler function="TrimToCurve" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1205" variable="ToolBarItem11" member="yes">
+				<label>Trim to zero</label>
+				<bitmap code="GetIcon(toolbar_center_zero_png, toolbar_center_zero_png_size)" />
+				<tooltip>Center zero</tooltip>
+				<handler function="TrimToZero" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1206" variable="ToolBarItem12" member="yes">
+				<label>Reset scale</label>
+				<bitmap code="GetIcon(toolbar_reset_scale_png, toolbar_reset_scale_png_size)" />
+				<tooltip>Reset scale</tooltip>
+				<handler function="ScaleReset" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1203" variable="ToolBarItem9" member="yes">
+				<label>Hide image</label>
+				<bitmap code="GetIcon(toolbar_show_hide_image_png, toolbar_show_hide_image_png_size)" />
+				<tooltip>Show/Hide image</tooltip>
+				<handler function="HideShowImage" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1207" variable="ToolBarItem13" member="yes">
+				<label>Trim to image</label>
+				<bitmap code="GetIcon(toolbar_trim_to_image_png, toolbar_trim_to_image_png_size)" />
+				<tooltip>Trim to image</tooltip>
+				<handler function="TrimToImage" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1208" variable="ToolBarItem23" member="yes">
+				<label>Custom scale</label>
+				<bitmap code="GetIcon(toolbar_custom_scale_png, toolbar_custom_scale_png_size)" />
+				<tooltip>Custom scale</tooltip>
+				<handler function="SetCustomScale" entry="EVT_TOOL" />
+			</object>
+			<object class="separator" />
+			<object class="tool" name="1505" variable="ToolBarItem22" member="yes">
+				<label>Show coefficients</label>
+				<bitmap code="GetIcon(toolbar_coefficients_png, toolbar_coefficients_png_size)" />
+				<tooltip>Show coefficients</tooltip>
+				<handler function="ShowOrHideCoefficientWindow" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1501" variable="ToolBarItem14" member="yes">
+				<label>Snapshot</label>
+				<bitmap code="GetIcon(toolbar_export_image_png, toolbar_export_image_png_size)" />
+				<tooltip>Export PNG snapshot</tooltip>
+				<handler function="MakeScreenSnapshot" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1502" variable="ToolBarItem15" member="yes">
+				<label>Cfunction</label>
+				<bitmap code="GetIcon(toolbar_export_C_png, toolbar_export_C_png_size)" />
+				<tooltip>Export C function</tooltip>
+				<handler function="ExportCFunction" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1503" variable="ToolBarItem16" member="yes">
+				<label>CsvTable</label>
+				<bitmap code="GetIcon(toolbar_export_CSV_png, toolbar_export_CSV_png_size)" />
+				<tooltip>Export CSV table</tooltip>
+				<handler function="ExportCSVTable" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="1504" variable="ToolBarItem17" member="yes">
+				<label>OdtReport</label>
+				<bitmap code="GetIcon(toolbar_export_ODT_png, toolbar_export_ODT_png_size)" />
+				<tooltip>Export ODT report</tooltip>
+				<handler function="SaveOdtReport" entry="EVT_TOOL" />
+			</object>
+		</object>
+		<object class="wxMenu" variable="menuPanelGraph" member="yes">
+			<object class="wxMenuItem" name="idUndo" variable="MenuItem5" member="yes">
+				<label>stop command</label>
+				<bitmap code="GetIcon(toolbar_stop_command_png, toolbar_stop_command_png_size)" />
+				<handler function="StopCommandPopUpMenu" entry="EVT_MENU" />
+			</object>
+			<object class="separator" />
+			<object class="wxMenuItem" name="idLockX" variable="MenuItem3" member="yes">
+				<label>Lock scale X</label>
+				<handler function="LockXScale" entry="EVT_MENU" />
+				<checkable>1</checkable>
+			</object>
+			<object class="wxMenuItem" name="idLockY" variable="MenuItem4" member="yes">
+				<label>Lock scale Y</label>
+				<handler function="LockYScale" entry="EVT_MENU" />
+				<checkable>1</checkable>
+			</object>
+			<object class="separator" />
+			<object class="wxMenuItem" name="idLogX" variable="MenuItem6" member="yes">
+				<label>Logarithmic X</label>
+				<handler function="SetLogarithmicX" entry="EVT_MENU" />
+				<checkable>1</checkable>
+			</object>
+			<object class="wxMenuItem" name="idLogY" variable="MenuItem7" member="yes">
+				<label>Logarithmic Y</label>
+				<handler function="SetLogarithmicY" entry="EVT_MENU" />
+				<checkable>1</checkable>
+			</object>
+			<object class="separator" />
+			<object class="wxMenuItem" name="idLockForDrag" variable="MenuItem50" member="yes">
+				<label>Lock for drag</label>
+				<handler function="LockScreenDrag" entry="EVT_MENU" />
+				<checkable>1</checkable>
+			</object>
+		</object>
+	</object>
+</wxsmith>

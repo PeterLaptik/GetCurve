@@ -1,0 +1,8 @@
+Icons and pictures in the executable file are being kept as unsigned char arrays.
+Below are the commands to create apropriate headers using bin2c:
+
+bin2c -o icons.h toolbar_load_image.png toolbar_about.png toolbar_center_zero.png toolbar_coefficients.png toolbar_custom_scale.png toolbar_delete_point.png toolbar_export_C.png toolbar_export_CSV.png toolbar_export_image.png toolbar_export_ODT.png toolbar_pick_multi_point.png toolbar_pick_point.png toolbar_remove_image.png toolbar_rescale_image.png toolbar_reset_scale.png toolbar_settings.png toolbar_show_hide_image.png toolbar_sort.png toolbar_stop_command.png toolbar_trim_to_curve.png toolbar_trim_to_image.png toolbar_zoom_out.png pick_multi_point.png reset_scale.png show_hide_image.png sort.png trim_to.png trim_to_1.png x_ratio.png y_ratio.png zoom_in.png zoom_out.png logarithmic.png log10Y_more.png log10Y_less.png log10_more.png log10_less.png linear.png coefficients.png center_zero.png toolbar_zoom_in.png pick_point.png main.ico logo.png 
+
+bin2c -o picsAboutWindow.h logo_small.png
+
+bin2c -o iconsScaleDialog.h calibrate_y.png calibrate_xy.png calibrate_x.png

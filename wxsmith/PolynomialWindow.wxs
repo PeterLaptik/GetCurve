@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="PolynomialWindow">
+		<title>Polynomial coefficients</title>
+		<pos_arg>1</pos_arg>
+		<size_arg>1</size_arg>
+		<style>wxDEFAULT_FRAME_STYLE|wxFRAME_TOOL_WINDOW|wxFRAME_FLOAT_ON_PARENT|wxCLIP_CHILDREN</style>
+		<handler function="OnClose" entry="EVT_CLOSE" />
+		<handler function="OnMaximize" entry="EVT_LEFT_DCLICK" />
+		<object class="wxBoxSizer" variable="BoxSizer1" member="no">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<object class="wxGrid" name="ID_GRID1" variable="coeffGrid" member="yes">
+					<cols>1</cols>
+					<rows>20</rows>
+					<labelcolwidth>64</labelcolwidth>
+					<defaultcolsize>128</defaultcolsize>
+					<collabels>
+						<item>value</item>
+					</collabels>
+				</object>
+				<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+				<border>32</border>
+				<option>1</option>
+			</object>
+			<object class="sizeritem">
+				<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
+					<label>Close</label>
+					<handler function="CloseHasBeenPressed" entry="EVT_BUTTON" />
+				</object>
+				<flag>wxALL|wxALIGN_CENTER_HORIZONTAL</flag>
+				<border>5</border>
+			</object>
+		</object>
+	</object>
+</wxsmith>

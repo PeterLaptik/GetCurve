@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="ColorSettings">
+		<title>Display settings</title>
+		<centered>1</centered>
+		<id_arg>0</id_arg>
+		<object class="wxBoxSizer" variable="BoxSizer1" member="no">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<object class="wxGridSizer" variable="GridSizer1" member="no">
+					<cols>2</cols>
+					<rows>10</rows>
+					<object class="sizeritem">
+						<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+							<label>Canvas background color</label>
+						</object>
+						<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+						<border>32</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxPanel" name="ID_PANEL1" variable="clrCanvas" member="yes">
+							<size>48,16</size>
+							<style>wxSIMPLE_BORDER|wxTAB_TRAVERSAL</style>
+							<handler function="ChangeBackground" entry="EVT_LEFT_DCLICK" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxSHAPED</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
+							<label>Zero axis lines color</label>
+						</object>
+						<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+						<border>32</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxPanel" name="ID_PANEL2" variable="clrZero" member="yes">
+							<size>48,16</size>
+							<style>wxSIMPLE_BORDER|wxTAB_TRAVERSAL</style>
+							<handler function="ChangeZeroLineColour" entry="EVT_LEFT_DCLICK" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxSHAPED</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxStaticText" name="ID_STATICTEXT3" variable="StaticText3" member="yes">
+							<label>Coordinate lines color</label>
+						</object>
+						<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+						<border>32</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxPanel" name="ID_PANEL3" variable="clrCoord" member="yes">
+							<size>48,16</size>
+							<style>wxSIMPLE_BORDER|wxTAB_TRAVERSAL</style>
+							<handler function="ChangeCoordinateLineColour" entry="EVT_LEFT_DCLICK" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxSHAPED</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxStaticText" name="ID_STATICTEXT4" variable="StaticText4" member="yes">
+							<label>Coordinate extralines color</label>
+						</object>
+						<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+						<border>32</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxPanel" name="ID_PANEL4" variable="clrCoordAdds" member="yes">
+							<size>48,16</size>
+							<style>wxSIMPLE_BORDER|wxTAB_TRAVERSAL</style>
+							<handler function="ChangeCoordinateLineAddsColour" entry="EVT_LEFT_DCLICK" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxSHAPED</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxStaticText" name="ID_STATICTEXT5" variable="StaticText5" member="yes">
+							<label>Main line color</label>
+						</object>
+						<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+						<border>32</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxPanel" name="ID_PANEL5" variable="clrMainLine" member="yes">
+							<size>48,16</size>
+							<style>wxSIMPLE_BORDER|wxTAB_TRAVERSAL</style>
+							<handler function="ChangeMainLineColour" entry="EVT_LEFT_DCLICK" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxSHAPED</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxStaticText" name="ID_STATICTEXT6" variable="StaticText6" member="yes">
+							<label>Points color</label>
+						</object>
+						<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+						<border>32</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxPanel" name="ID_PANEL6" variable="clrPoints" member="yes">
+							<size>48,16</size>
+							<style>wxSIMPLE_BORDER|wxTAB_TRAVERSAL</style>
+							<handler function="ChangePointsColour" entry="EVT_LEFT_DCLICK" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxSHAPED</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxStaticText" name="ID_STATICTEXT7" variable="StaticText7" member="yes">
+							<label>Normal text color</label>
+						</object>
+						<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+						<border>32</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxPanel" name="ID_PANEL7" variable="clrText" member="yes">
+							<size>48,16</size>
+							<style>wxSIMPLE_BORDER|wxTAB_TRAVERSAL</style>
+							<handler function="ChangeTextColour" entry="EVT_LEFT_DCLICK" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxSHAPED</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxStaticText" name="ID_STATICTEXT8" variable="StaticText8" member="yes">
+							<label>Error text color</label>
+						</object>
+						<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+						<border>32</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxPanel" name="ID_PANEL8" variable="clrTextErr" member="yes">
+							<size>48,16</size>
+							<style>wxSIMPLE_BORDER|wxTAB_TRAVERSAL</style>
+							<handler function="ChangeTextErrorColour" entry="EVT_LEFT_DCLICK" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxSHAPED</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxStaticText" name="ID_STATICTEXT9" variable="StaticText9" member="yes">
+							<label>Line thickness</label>
+						</object>
+						<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+						<border>32</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxSpinCtrl" name="ID_SPINCTRL1" variable="thkLine" member="yes">
+							<value>0</value>
+							<handler function="ChangeMainLineThickness" entry="EVT_SPINCTRL" />
+						</object>
+						<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+					</object>
+					<object class="sizeritem">
+						<object class="wxStaticText" name="ID_STATICTEXT10" variable="StaticText10" member="yes">
+							<label>Point radius</label>
+						</object>
+						<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+						<border>32</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxSpinCtrl" name="ID_SPINCTRL2" variable="radPoint" member="yes">
+							<value>0</value>
+							<handler function="ChangePointRadius" entry="EVT_SPINCTRL" />
+						</object>
+						<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+					</object>
+				</object>
+				<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxSHAPED|wxFIXED_MINSIZE</flag>
+				<border>5</border>
+			</object>
+			<object class="sizeritem">
+				<object class="wxBoxSizer" variable="BoxSizer12" member="no">
+					<object class="sizeritem">
+						<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
+							<label>Cancel</label>
+							<handler function="ClickCancel" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxButton" name="ID_BUTTON3" variable="Button3" member="yes">
+							<label>Apply</label>
+							<enabled>0</enabled>
+							<handler function="ApplyNewSettings" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxButton" name="ID_BUTTON2" variable="Button2" member="yes">
+							<label>OK</label>
+							<handler function="ClickOK" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+				</object>
+				<flag>wxALL|wxALIGN_RIGHT</flag>
+				<border>16</border>
+			</object>
+			<object class="sizeritem">
+				<object class="wxBoxSizer" variable="BoxSizer11" member="no">
+					<object class="sizeritem">
+						<object class="wxButton" name="ID_BUTTON4" variable="Button4" member="yes">
+							<label>Reset to default</label>
+							<handler function="SetDefault" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_VERTICAL|wxSHAPED</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+				</object>
+				<flag>wxBOTTOM|wxLEFT|wxSHAPED</flag>
+				<border>16</border>
+			</object>
+		</object>
+		<object class="wxColourDialog" variable="ColourDialog1" member="yes" />
+	</object>
+</wxsmith>
