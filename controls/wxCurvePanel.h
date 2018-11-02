@@ -69,12 +69,6 @@ class CurvePanel : public wxPanelGraph
         inline double RecalcStepForLogarithimc(double currentXValue,
                                                double left,
                                                double right);
-        // Predefined settings
-        const int errorOutputX = 40;        // x-coordinate to output error messages
-        const int errorOutputY = 40;        // y-coordinate to output error messages
-        const double marginForTrim = 10;    // margin in percents. See TrimScale()
-        const double stepForOutCurve = 10;   // see DrawCurve method
-
         // Errors
         CurveError m_error;
         // Settings

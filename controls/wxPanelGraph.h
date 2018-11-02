@@ -53,8 +53,8 @@ class wxPanelGraph : public wxPanel
         void SetForPointPick(bool pick);    // pick points on panel
         double GetX(void) const;
         double GetY(void) const;
-        int GetMinOrder(void) const {return minOrder;}
-        int GetMaxOrder(void) const {return maxOrder;}
+        int GetMinOrder(void) const;
+        int GetMaxOrder(void) const;
         int GetLogZero(void) const {return zeroXYForLogarithmic;}   // get left border for logarithmic axises
 
         // Panel appearance
@@ -141,18 +141,6 @@ class wxPanelGraph : public wxPanel
         void MakeZeroLines(wxDC &dc);
         // Drawing
         inline void DrawLine (double x1, double y1, double x2, double y2, wxDC &dc);
-        // Predefined settings
-        const int borderHShift = 40;                    // letters shift from horizontal border
-        const int borderVShift = 20;                    // letter shift from vertical border
-        const double borderStartX = 100;                // initial border values / initial picture scale
-        const double borderStartY = 100;                // initial border values / initial picture scale
-        const int zeroXYForLogarithmicDefault = -2;     // power for logarithmic edge points
-        const double zeroLineForLogarithmic = 1;        // zero line coordinate for logarithmic axises
-        const int minGridToShowCorners = 3;             // minimum grid number (sparse grid) to show additional coordinates
-        const int maxOrder = 10;                        // maximum order for numbers
-        const int minOrder = -10;                       // minimum order for numbers
-        const int maxBaseNumber = 20;                   // maximum base number for grid dividing
-        const double zeroValue = 9.4e-10;               // trim to zero
         // Graph scale and position
         double m_borderLeft;        // left border global coordinates
         double m_borderRight;       // right border global coordinates

@@ -61,12 +61,6 @@ class ImageCurve
 		double m_ptLineYRealValue;      // real value of the second calibrated point per y-axis
 		double m_picXRealScale;         // real picture scale to output
         double m_picYRealScale;         // real picture scale to output
-		// Min and max number values
-		int m_minOrder = -10;
-		int m_maxOrder = 10;
-
-
-
 };
 
 #endif // IMAGECURVE_H_INCLUDED

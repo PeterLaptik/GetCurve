@@ -1,7 +1,30 @@
-#include "wx/msw/wx.rc"
-
-//aaaa ICON "wx/msw/std.ico"
 aaaa ICON "icons/main.ico"
 
+#include "wx/msw/wx.rc"
 
-
+//VERSIONINFO
+1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+FILETYPE VFT_APP
+{
+  BLOCK "StringFileInfo"
+	 {
+		 BLOCK "080904E4"
+		 {
+			 VALUE "CompanyName", ""
+			 VALUE "FileVersion", ""
+			 VALUE "FileDescription", "Finding coefficients of a polynomial"
+			 VALUE "InternalName", ""
+			 VALUE "LegalCopyright", "Peter Laptik (c) 2018"
+			 VALUE "LegalTrademarks", ""
+			 VALUE "OriginalFilename", ""
+			 VALUE "ProductName", "GetCurve"
+			 VALUE "ProductVersion", "1.0 beta"
+		 }
+	 }
+  BLOCK "VarFileInfo"
+	 {
+		 VALUE "Translation", 0x0809, 1252
+	 }
+}

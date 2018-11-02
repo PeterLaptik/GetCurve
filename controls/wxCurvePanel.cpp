@@ -1,5 +1,11 @@
 #include "wxCurvePanel.h"
 
+// Predefined settings
+const int errorOutputX = 40;        // x-coordinate to output error messages
+const int errorOutputY = 40;        // y-coordinate to output error messages
+const double marginForTrim = 10;    // margin in percents. See TrimScale()
+const double stepForOutCurve = 10;   // see DrawCurve method
+
 // Default settings
 const int MAX_POINT_RADIUS = 10;
 const int MAX_MAINLINE_THICKNESS = 5;
@@ -8,6 +14,7 @@ const wxColour DEFAULT_COLOUR_MAINLINE = *wxBLACK;
 const wxColour DEFAULT_COLOUR_POINTS = *wxBLACK;
 const int DEFALUT_POINT_RADIUS = 5;
 const int DEFAULT_LINE_THICKNESS = 2;
+
 // Highlighting lines
 const int DEFAULT_HIGHLIGHT_WITH_THIN = 1;
 const int DEFAULT_HIGHLIGHT_WITH_THICK = 2;
@@ -43,7 +50,7 @@ CurvePanel::~CurvePanel()
 // Gets points from point array
 void CurvePanel::SetPoints(Point *pt, size_t number)
 {
-    for (int i=0; i<number; ++i)
+    for (unsigned int i=0; i<number; ++i)
     {
         m_points[i].x = (*(pt + i)).x;
         m_points[i].y = (*(pt + i)).y;
@@ -54,7 +61,7 @@ void CurvePanel::SetPoints(Point *pt, size_t number)
 
 void CurvePanel::SetPolynomial(double *pt, size_t number)
 {
-    for (int i=0; i<number; ++i)
+    for (unsigned int i=0; i<number; ++i)
     {
         m_polynomial[i] = pt[i];
     }

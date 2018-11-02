@@ -6,6 +6,9 @@ const double m_minScale = 0.1;
 const double m_maxScale = 5;
 // Accessible number values
 const int DEFAULT_ORDER_LIMIT = 10;
+// Min and max number values
+int m_minOrder = -10;
+int m_maxOrder = 10;
 
 ImageCurve::ImageCurve()
 {

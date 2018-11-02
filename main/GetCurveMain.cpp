@@ -265,13 +265,13 @@ GetCurveFrame::GetCurveFrame(wxWindow* parent,wxWindowID id)
     SetSizer(BoxSizer1);
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
-    MenuItem27 = new wxMenuItem(Menu1, idMenuFileNew, _("New"), wxEmptyString, wxITEM_NORMAL);
+    MenuItem27 = new wxMenuItem(Menu1, idMenuFileNew, _("New\tCtrl+N"), wxEmptyString, wxITEM_NORMAL);
     MenuItem27->SetBitmap(wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_NEW")),wxART_OTHER));
     Menu1->Append(MenuItem27);
-    MenuItem28 = new wxMenuItem(Menu1, idMenuOpenFile, _("Open"), wxEmptyString, wxITEM_NORMAL);
+    MenuItem28 = new wxMenuItem(Menu1, idMenuOpenFile, _("Open\tCtrl+O"), wxEmptyString, wxITEM_NORMAL);
     MenuItem28->SetBitmap(wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_FILE_OPEN")),wxART_OTHER));
     Menu1->Append(MenuItem28);
-    MenuItem29 = new wxMenuItem(Menu1, idMenuSaveFile, _("Save"), wxEmptyString, wxITEM_NORMAL);
+    MenuItem29 = new wxMenuItem(Menu1, idMenuSaveFile, _("Save\tCtrl+S"), wxEmptyString, wxITEM_NORMAL);
     MenuItem29->SetBitmap(wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_FILE_SAVE")),wxART_OTHER));
     Menu1->Append(MenuItem29);
     MenuItem30 = new wxMenuItem(Menu1, idMenuSaveFileAs, _("Save as"), wxEmptyString, wxITEM_NORMAL);
@@ -301,7 +301,7 @@ GetCurveFrame::GetCurveFrame(wxWindow* parent,wxWindowID id)
     Menu1->Append(MenuItem1);
     MenuBar1->Append(Menu1, _("&File"));
     Menu4 = new wxMenu();
-    MenuItem21 = new wxMenuItem(Menu4, idMenuStop, _("Stop command"), wxEmptyString, wxITEM_NORMAL);
+    MenuItem21 = new wxMenuItem(Menu4, idMenuStop, _("Stop command\tEsc"), wxEmptyString, wxITEM_NORMAL);
     MenuItem21->SetBitmap(GetIcon(toolbar_stop_command_png, toolbar_stop_command_png_size));
     Menu4->Append(MenuItem21);
     Menu4->AppendSeparator();
@@ -327,7 +327,7 @@ GetCurveFrame::GetCurveFrame(wxWindow* parent,wxWindowID id)
     Menu4->Append(MenuItem38);
     MenuBar1->Append(Menu4, _("Edit"));
     Menu3 = new wxMenu();
-    MenuItem8 = new wxMenuItem(Menu3, idMenuRefresh, _("Refresh"), wxEmptyString, wxITEM_NORMAL);
+    MenuItem8 = new wxMenuItem(Menu3, idMenuRefresh, _("Refresh\tF5"), wxEmptyString, wxITEM_NORMAL);
     MenuItem8->SetBitmap(wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_REDO")),wxART_OTHER));
     Menu3->Append(MenuItem8);
     MenuItem42 = new wxMenu();
@@ -1287,7 +1287,9 @@ void GetCurveFrame::RescaleImage(wxCommandEvent& event)
 void GetCurveFrame::ImageHasBeenScaled(wxCommandEvent& event)
 {
     PanelGraph->ScaleTrimToImage();
-    //PanelGraph->Refresh();
+    PanelGraph->Refresh();
+    RefreshButtonStates();
+    RefreshCheckBoxStates();
 }
 
 void GetCurveFrame::RemoveUnderLayerImage(wxCommandEvent& event)
@@ -1302,7 +1304,7 @@ void GetCurveFrame::TrimToImage(wxCommandEvent& event)
     RefreshButtonStates();
 }
 
-// Refreshes enable states of the buttons
+// Refreshes enable states of the buttons (logarithmic scales)
 void GetCurveFrame::RefreshButtonStates()
 {
     if ((PanelGraph->GetIsLogarithmicX()) ||

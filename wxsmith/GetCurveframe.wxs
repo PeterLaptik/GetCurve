@@ -256,16 +256,19 @@
 				<label>&amp;File</label>
 				<object class="wxMenuItem" name="idMenuFileNew" variable="MenuItem27" member="yes">
 					<label>New</label>
+					<accel>Ctrl+N</accel>
 					<bitmap stock_id="wxART_NEW" />
 					<handler function="FileNew" entry="EVT_MENU" />
 				</object>
 				<object class="wxMenuItem" name="idMenuOpenFile" variable="MenuItem28" member="yes">
 					<label>Open</label>
+					<accel>Ctrl+O</accel>
 					<bitmap stock_id="wxART_FILE_OPEN" />
 					<handler function="OpenFile" entry="EVT_MENU" />
 				</object>
 				<object class="wxMenuItem" name="idMenuSaveFile" variable="MenuItem29" member="yes">
 					<label>Save</label>
+					<accel>Ctrl+S</accel>
 					<bitmap stock_id="wxART_FILE_SAVE" />
 					<handler function="SaveFile" entry="EVT_MENU" />
 				</object>
@@ -315,6 +318,7 @@
 				<label>Edit</label>
 				<object class="wxMenuItem" name="idMenuStop" variable="MenuItem21" member="yes">
 					<label>Stop command</label>
+					<accel>Esc</accel>
 					<bitmap code="GetIcon(toolbar_stop_command_png, toolbar_stop_command_png_size)" />
 					<handler function="StopCommandPopUpMenu" entry="EVT_MENU" />
 				</object>
@@ -356,6 +360,7 @@
 				<label>View</label>
 				<object class="wxMenuItem" name="idMenuRefresh" variable="MenuItem8" member="yes">
 					<label>Refresh</label>
+					<accel>F5</accel>
 					<bitmap stock_id="wxART_REDO" />
 					<handler function="RefreshPanel" entry="EVT_MENU" />
 				</object>

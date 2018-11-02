@@ -3,6 +3,19 @@
 // Custom event. See description in the header file
 wxDEFINE_EVENT(EVT_GOT_POINT, wxCommandEvent);
 
+// Predefined settings
+const int borderHShift = 40;                    // letters shift from horizontal border
+const int borderVShift = 20;                    // letter shift from vertical border
+const double borderStartX = 100;                // initial border values / initial picture scale
+const double borderStartY = 100;                // initial border values / initial picture scale
+const int zeroXYForLogarithmicDefault = -2;     // power for logarithmic edge points
+const double zeroLineForLogarithmic = 1;        // zero line coordinate for logarithmic axises
+const int minGridToShowCorners = 3;             // minimum grid number (sparse grid) to show additional coordinates
+const int maxOrder = 10;                        // maximum order for numbers
+const int minOrder = -10;                       // minimum order for numbers
+const int maxBaseNumber = 20;                   // maximum base number for grid dividing
+const double zeroValue = 9.4e-10;               // trim to zero
+
 // Scaling
 const double SCALE_ZOOM_COEFF = 1.25;
 bool m_needToBeZoomedOut;
@@ -813,6 +826,17 @@ void wxPanelGraph::DeleteImage()
 }
 
 /******************** Panel graph settings ********************************************************/
+
+int wxPanelGraph::GetMinOrder() const
+{
+    return minOrder;
+}
+
+int wxPanelGraph::GetMaxOrder() const
+{
+    return maxOrder;
+}
+
 
 void wxPanelGraph::SetScaleXLocked(bool isLocked)
 {

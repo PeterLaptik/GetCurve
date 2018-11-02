@@ -426,7 +426,6 @@ void GetCurveFrame::FileNew(wxCommandEvent& event)
 
 void GetCurveFrame::LoadUnderlayerPicture(wxCommandEvent& event)
 {
-    bool dlgResult;
     wxString pathToLoad;
     wxBitmapType myType;
 
@@ -469,6 +468,7 @@ void GetCurveFrame::LoadUnderlayerPicture(wxCommandEvent& event)
                            PanelGraph->GetMinOrder(),
                            PanelGraph->GetMaxOrder());
     scaler->Show();
+    PanelGraph->Refresh();
 }
 
 // Returns:

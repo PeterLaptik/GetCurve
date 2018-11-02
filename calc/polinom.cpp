@@ -1,7 +1,5 @@
 #include "polinom.h"
 
-#include <wx/msgdlg.h>
-
 Polynom::Polynom()
 {
 	m_counter = 0;
@@ -97,7 +95,6 @@ bool Polynom::CheckPoints()
 // Calculates polynomial coefficients
 void Polynom::Calculate()
 {
-    wxString tmp;
     size_t mySize[MAX_POINTS];
     double coeff;
     Monom parts[MAX_POINTS][MAX_POINTS];
@@ -161,12 +158,11 @@ void Polynom::Calculate()
 // Returns new count of the polynomial
 int Polynom::CalculateSingleMultiply(Dinom a, Monom *result, size_t n)
 {
-    wxString tmp;
     int maxElements;
     Monom firstExpr[MAX_POINTS];    // first semi-expression
     Monom secondExpr[MAX_POINTS];   // second semi-expression
-    int counter1;                   // number of items in the first expression
-    int counter2;                   // number of items in the second expression
+    //int counter1;                   // number of items in the first expression
+    //int counter2;                   // number of items in the second expression
     maxElements = n;
 
     if (n<1)
