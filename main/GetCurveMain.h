@@ -16,7 +16,7 @@
 #include "../dialogues/CustomScale.h"
 #include "../dialogues/ColorSettings.h"
 #include "../dialogues/AboutWindow.h"
-#include "../calc/polinom.h"
+#include "../calc/polynom.h"
 #include "../controls/wxCurvePanel.h"
 #include "../toolboxes/PolynomialWindow.h"
 #include "../odt_creator/include/OdtCreator.h"

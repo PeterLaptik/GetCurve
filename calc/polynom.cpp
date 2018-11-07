@@ -1,4 +1,4 @@
-#include "polinom.h"
+#include "polynom.h"
 
 Polynom::Polynom()
 {
