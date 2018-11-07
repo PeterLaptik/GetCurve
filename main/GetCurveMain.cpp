@@ -1302,6 +1302,7 @@ void GetCurveFrame::TrimToImage(wxCommandEvent& event)
 {
     PanelGraph->ScaleTrimToImage();
     RefreshButtonStates();
+    RefreshCheckBoxStates();
 }
 
 // Refreshes enable states of the buttons (logarithmic scales)

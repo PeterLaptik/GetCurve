@@ -354,6 +354,16 @@ void wxPanelGraph::OnPaint(wxPaintEvent& event)
                                     m_borderUp, m_borderDown,
                                     m_width, m_height,
                                     m_isXlogarithmic, m_isYlogarithmic);
+
+    //if (m_borderUp<m_borderDown)
+        //wxMessageBox(_T("Hello error!"));
+
+    // avoid errors
+    if (m_borderLeft>m_borderRight)
+        m_borderRight = m_borderLeft + pow(10, zeroXYLogPower + 1);
+    if (m_borderDown>m_borderUp)
+        m_borderUp = m_borderDown + pow(10, zeroXYLogPower + 1);
+
     m_needToBeZoomedOut = false;
     if (!m_isXlogarithmic)
     {
@@ -794,6 +804,38 @@ void wxPanelGraph::ScaleTrimToImage()
 
     SetLogarithmicX(m_underlayerPicture.GetIsLogX());
     SetLogarithmicY(m_underlayerPicture.GetIsLogY());
+
+
+    // exclude void image on image scaling
+    if ((m_isYlogarithmic) && (m_underlayerPicture.GetRealBorderDown()<m_borderDown))
+        {
+            while((m_underlayerPicture.GetRealBorderDown()<m_borderDown) &&
+                  (zeroXYLogPower > minOrder))
+            DecrementZeroLog();
+        }
+
+    if ((m_isYlogarithmic) && (m_underlayerPicture.GetRealBorderDown()>m_borderDown))
+        {
+            while((m_underlayerPicture.GetRealBorderDown()>m_borderDown) &&
+                  (zeroXYLogPower < maxOrder))
+            IncrementZeroLog();
+        }
+
+    if ((m_isXlogarithmic) && (m_underlayerPicture.GetRealBorderLeft()<m_borderLeft))
+        {
+            while((m_underlayerPicture.GetRealBorderLeft()<m_borderLeft) &&
+                  (zeroXYLogPower > minOrder))
+            DecrementZeroLog();
+        }
+
+    if ((m_isXlogarithmic) && (m_underlayerPicture.GetRealBorderLeft()>m_borderLeft))
+        {
+            while((m_underlayerPicture.GetRealBorderLeft()>m_borderLeft) &&
+                  (zeroXYLogPower < maxOrder))
+            IncrementZeroLog();
+        }
+    // ^ exclude void image on image scaling
+
     ScaleSetFramePosition (m_underlayerPicture.GetRealBorderLeft(),
                            m_underlayerPicture.GetRealBorderRight(),
                            m_underlayerPicture.GetRealBorderUp(),

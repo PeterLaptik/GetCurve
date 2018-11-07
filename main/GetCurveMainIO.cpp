@@ -4,7 +4,7 @@
 #include <wx/wfstream.h>
 #include <wx/datstrm.h>
 
-const char* const FILE_SETTINGS_NAME = "settings.dat";
+const char* const FILE_SETTINGS_NAME = "GetCurve-1.0-settings.dat";
 //const char* const FILE_DELIMITER = "\\"; @excluded
 const char* const FILE_IDENT = "GetCurveFile_1.0";
 const char* const FILE_IDENT_SETTINGS = "GetCurveFile_1.0_settings";
