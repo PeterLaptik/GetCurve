@@ -5,7 +5,11 @@
 
 #define MAX_POINTS 20
 
+#ifdef __WXGTK__
+#include "stddef.h"
+#else
 typedef unsigned int size_t;
+#endif // __WXGTK__
 
 class Polynom
 {

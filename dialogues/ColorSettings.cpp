@@ -143,11 +143,23 @@ void ColorSettings::SetTarget (CurvePanel *target)
 {
     targetPanel = target;
     thkLine->SetValue(targetPanel->GetMainLineThickness());
+
+    #ifdef __WXGTK20__
+    thkLine->SetRange(MINIMUM_LINE_THICKNESS, targetPanel->GetMaxLineThickness());
+    #else
     thkLine->SetMin(MINIMUM_LINE_THICKNESS);
 	thkLine->SetMax(targetPanel->GetMaxLineThickness());
+    #endif // ____WXGTK20__
+
 	radPoint->SetValue(targetPanel->GetPointRadius());
-	radPoint->SetMin(MIMIMUM_POINT_RADIUS);
+
+	#ifdef __WXGTK20__
+    radPoint->SetRange(MIMIMUM_POINT_RADIUS, targetPanel->GetMaxPointRadius());
+    #else
+    radPoint->SetMin(MIMIMUM_POINT_RADIUS);
 	radPoint->SetMax(targetPanel->GetMaxPointRadius());
+    #endif
+
     RefreshColors();
 }
 

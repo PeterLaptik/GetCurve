@@ -4,6 +4,10 @@
 #include "../res/iconsScaleDialog.h"
 #include <wx/mstream.h>
 
+#ifdef __WXGTK20__
+#include <wx/settings.h>
+#endif // __WXGTK20__
+
 //(*InternalHeaders(PictureScaler)
 #include <wx/bitmap.h>
 #include <wx/image.h>

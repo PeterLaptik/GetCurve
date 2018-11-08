@@ -47,8 +47,11 @@ PolynomialWindow::PolynomialWindow(wxWindow* parent,wxWindowID id,const wxPoint&
 	Connect(wxEVT_LEFT_DCLICK,(wxObjectEventFunction)&PolynomialWindow::OnMaximize);
 	//*)
 
+	#ifndef __WXGTK20__
 	this->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_FRAMEBK));
 	coeffGrid->SetDefaultCellBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_FRAMEBK));
+	#endif // __WXGTK20__
+
 	for (int i=0; i<MAX_POINTS; ++i)
     {
         m_textOut = wxT("a");

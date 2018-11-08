@@ -2,7 +2,7 @@
 #define WXPANELGRAPH_H_INCLUDED
 
 #include <wx/wx.h>
-#include "ImageCurve.h"
+#include "imageCurve.h"
 
 // Custom wxCommand event.
 // Occurs when mouse left button is clicked on a panel

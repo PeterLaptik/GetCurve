@@ -1,4 +1,4 @@
-#include "ImageCurve.h"
+#include "imageCurve.h"
 
 // Scale limits for a drafting image
 // Be aware: too small or too big values can cause unhanled exceptions
