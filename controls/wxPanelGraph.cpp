@@ -21,7 +21,8 @@ const double SCALE_ZOOM_COEFF = 1.25;
 bool m_needToBeZoomedOut;
 
 // Default palette settings
-const wxColour DEFAULT_COLOUR_PANEL = wxSystemSettings::GetColour(wxSYS_COLOUR_FRAMEBK);
+//const wxColour DEFAULT_COLOUR_PANEL = wxSystemSettings::GetColour(wxSYS_COLOUR_FRAMEBK);
+const wxColour DEFAULT_COLOUR_PANEL = *wxWHITE;
 const wxColour DEFAULT_COLOUR_LINES_ZERO = *wxBLACK;
 const wxColour DEFAULT_COLOUR_LINES_COORD = *wxBLUE;
 const wxColour DEFAULT_COLOUR_LINES_COORD_ADDS = wxColour(200,200,200);

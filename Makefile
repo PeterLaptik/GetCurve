@@ -20,46 +20,46 @@ GetCurve-1.0: GetCurveApp.o GetCurveMain.o GetCurveMainReports.o \
               $(PREF)obj/OdtFormula.o $(PREF)obj/OdtImages.o $(PREF)obj/OdtTable.o $(PREF)obj/polynom.o -s \
               -pthread `wx-config --libs` -lm -lc++
 
-polynom.o: $(PREF)calc/polynom.cpp
+polynom.o: $(PREF)calc/polynom.cpp $(PREF)calc/polynom.h
 	$(CC) -c $(PREF)calc/polynom.cpp $(FLAGS) -o $(PREF)obj/polynom.o
 
-wxPanelGraph.o: $(PREF)controls/wxPanelGraph.cpp
+wxPanelGraph.o: $(PREF)controls/wxPanelGraph.cpp $(PREF)controls/wxPanelGraph.h
 	$(CC) -c $(PREF)controls/wxPanelGraph.cpp  $(FLAGS) $(WXFLAGS) -o $(PREF)obj/wxPanelGraph.o
 
-wxCurvePanel.o: $(PREF)controls/wxCurvePanel.cpp $(PREF)controls/wxCurvePanel.cpp
+wxCurvePanel.o: $(PREF)controls/wxCurvePanel.cpp $(PREF)controls/wxCurvePanel.h
 	$(CC) -c $(PREF)controls/wxCurvePanel.cpp  $(FLAGS) $(WXFLAGS) -o $(PREF)obj/wxCurvePanel.o
 
-imageCurve.o: $(PREF)controls/imageCurve.cpp
+imageCurve.o: $(PREF)controls/imageCurve.cpp $(PREF)controls/imageCurve.h
 	$(CC) -c $(PREF)controls/imageCurve.cpp  $(FLAGS) $(WXFLAGS) -o $(PREF)obj/imageCurve.o
 
-AboutWindow.o: $(PREF)dialogues/AboutWindow.cpp
+AboutWindow.o: $(PREF)dialogues/AboutWindow.cpp $(PREF)dialogues/AboutWindow.h $(PREF)res/picsAboutWindow.h
 	$(CC) -c $(PREF)dialogues/AboutWindow.cpp  $(FLAGS) $(WXFLAGS) -o $(PREF)obj/AboutWindow.o
 
-CFunctionName.o: $(PREF)dialogues/CFunctionName.cpp
+CFunctionName.o: $(PREF)dialogues/CFunctionName.cpp $(PREF)dialogues/CFunctionName.h
 	$(CC) -c $(PREF)dialogues/CFunctionName.cpp  $(FLAGS) $(WXFLAGS) -o $(PREF)obj/CFunctionName.o
 
-ColorSettings.o: $(PREF)dialogues/ColorSettings.cpp
+ColorSettings.o: $(PREF)dialogues/ColorSettings.cpp $(PREF)dialogues/ColorSettings.h
 	$(CC) -c $(PREF)dialogues/ColorSettings.cpp  $(FLAGS) $(WXFLAGS) -o $(PREF)obj/ColorSettings.o
 
-CustomScale.o: $(PREF)dialogues/CustomScale.cpp
+CustomScale.o: $(PREF)dialogues/CustomScale.cpp $(PREF)dialogues/CustomScale.h
 	$(CC) -c $(PREF)dialogues/CustomScale.cpp  $(FLAGS) $(WXFLAGS) -o $(PREF)obj/CustomScale.o
 
-PictureScaler.o: $(PREF)dialogues/PictureScaler.cpp
+PictureScaler.o: $(PREF)dialogues/PictureScaler.cpp $(PREF)dialogues/PictureScaler.h $(PREF)res/iconsScaleDialog.h
 	$(CC) -c $(PREF)dialogues/PictureScaler.cpp  $(FLAGS) $(WXFLAGS) -o $(PREF)obj/PictureScaler.o
 
-GetCurveApp.o: $(PREF)main/GetCurveApp.cpp
+GetCurveApp.o: $(PREF)main/GetCurveApp.cpp $(PREF)main/GetCurveApp.h
 	$(CC) -c $(PREF)main/GetCurveApp.cpp  $(FLAGS) $(WXFLAGS) -o $(PREF)obj/GetCurveApp.o
 
-GetCurveMain.o: $(PREF)main/GetCurveMain.cpp
+GetCurveMain.o: $(PREF)main/GetCurveMain.cpp $(PREF)main/GetCurveMain.h $(PREF)res/icons.h
 	$(CC) -c $(PREF)main/GetCurveMain.cpp  $(FLAGS) $(WXFLAGS) -o $(PREF)obj/GetCurveMain.o
 
-GetCurveMainIO.o: $(PREF)main/GetCurveMainIO.cpp
+GetCurveMainIO.o: $(PREF)main/GetCurveMainIO.cpp $(PREF)main/GetCurveMain.h $(PREF)dialogues/PictureScaler.h 
 	$(CC) -c $(PREF)main/GetCurveMainIO.cpp  $(FLAGS) $(WXFLAGS) -o $(PREF)obj/GetCurveMainIO.o
 
-GetCurveMainReports.o: $(PREF)main/GetCurveMainReports.cpp
+GetCurveMainReports.o: $(PREF)main/GetCurveMainReports.cpp $(PREF)main/GetCurveMain.h $(PREF)dialogues/CFunctionName.h
 	$(CC) -c $(PREF)main/GetCurveMainReports.cpp  $(FLAGS) $(WXFLAGS) -o $(PREF)obj/GetCurveMainReports.o
 
-PolynomialWindow.o: $(PREF)toolboxes/PolynomialWindow.cpp
+PolynomialWindow.o: $(PREF)toolboxes/PolynomialWindow.cpp $(PREF)toolboxes/PolynomialWindow.h
 	$(CC) -c $(PREF)toolboxes/PolynomialWindow.cpp  $(FLAGS) $(WXFLAGS) -o $(PREF)obj/PolynomialWindow.o
 
 OdtCreator.o: $(PREF)odt_creator/src/OdtCreator.cpp

@@ -62,8 +62,8 @@
 			<Add library="../../../../../wxWidgets-3.1.0/lib/gcc_dll/libwxzlib.a" />
 		</Linker>
 		<Unit filename="calc/entity.h" />
-		<Unit filename="calc/polinom.cpp" />
-		<Unit filename="calc/polinom.h" />
+		<Unit filename="calc/polynom.cpp" />
+		<Unit filename="calc/polynom.h" />
 		<Unit filename="controls/imageCurve.cpp" />
 		<Unit filename="controls/imageCurve.h" />
 		<Unit filename="controls/wxCurvePanel.cpp" />

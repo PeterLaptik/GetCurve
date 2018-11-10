@@ -560,6 +560,7 @@ GetCurveFrame::GetCurveFrame(wxWindow* parent,wxWindowID id)
     // Preliminary initializations
     SpinCtrl1->SetValue(INITIAL_POINT_NUMBER);
     this->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_FRAMEBK));
+
     for (int i=0; i<SpinCtrl1->GetValue(); i++)
     {
         Grid1->SetCellValue(i,0,wxString::Format("%lf", polynom.GetPoint(i).x));

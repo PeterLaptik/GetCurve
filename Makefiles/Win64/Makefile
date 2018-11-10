@@ -10,17 +10,18 @@ FLAGS = -pipe -Wall -mthreads -D__MINGW64__ -D__WXMSW__ -DwxUSE_UNICODE_MSLU -O2
 
 all:GetCurve-1.0
 
-GetCurve-1.0: obj\resource.res obj\GetCurveApp.o obj\GetCurveMain.o obj\GetCurveMainReports.o \
-              obj\GetCurveMainIO.o obj\PolynomialWindow.o \
-              obj\PictureScaler.o obj\CustomScale.o obj\ColorSettings.o obj\CFunctionName.o obj\AboutWindow.o \
-              obj\imageCurve.o obj\wxCurvePanel.o obj\wxPanelGraph.o obj\OdtCreator.o obj\OdtCreatorArch.o obj\OdtCreatorDriver.o \
-              obj\OdtCreatorTemplates.o obj\OdtFormula.o obj\OdtImages.o obj\OdtTable.o obj\polinom.o \
+GetCurve-1.0: resource.res GetCurveApp.o GetCurveMain.o GetCurveMainReports.o \
+              GetCurveMainIO.o PolynomialWindow.o \
+              PictureScaler.o CustomScale.o ColorSettings.o CFunctionName.o AboutWindow.o \
+              imageCurve.o wxCurvePanel.o wxPanelGraph.o OdtCreator.o OdtCreatorArch.o OdtCreatorDriver.o \
+              OdtCreatorTemplates.o OdtFormula.o OdtImages.o OdtTable.o polynom.o \
               CopyDLLs
-	$(CC) -o bin/GetCurve-1.0.exe obj\GetCurveApp.o obj\GetCurveMain.o obj\GetCurveMainReports.o obj\GetCurveMainIO.o obj\PolynomialWindow.o \
-              obj\PictureScaler.o obj\CustomScale.o obj\ColorSettings.o obj\CFunctionName.o obj\AboutWindow.o \
-              obj\imageCurve.o obj\wxCurvePanel.o obj\wxPanelGraph.o obj\OdtCreator.o obj\OdtCreatorArch.o obj\OdtCreatorDriver.o \
-              obj\OdtCreatorTemplates.o obj\OdtFormula.o obj\OdtImages.o obj\OdtTable.o obj\polinom.o obj\resource.res -s\
-              -mthreads -mthreads \
+	$(CC) -o bin/GetCurve-1.0.exe obj/GetCurveApp.o obj/GetCurveMain.o obj/GetCurveMainReports.o obj/GetCurveMainIO.o \
+              obj/PolynomialWindow.o obj/PictureScaler.o obj/CustomScale.o obj/ColorSettings.o \
+              obj/CFunctionName.o obj/AboutWindow.o obj/imageCurve.o obj/wxCurvePanel.o obj/wxPanelGraph.o \
+              obj/OdtCreator.o obj/OdtCreatorArch.o obj/OdtCreatorDriver.o obj/OdtCreatorTemplates.o \
+              obj/OdtFormula.o obj/OdtImages.o obj/OdtTable.o obj/polynom.o obj/resource.res -s\
+              -mthreads \
               $(LIBA)\libwxexpat.a \
               $(LIBA)\libwxjpeg.a \
               $(LIBA)\libwxbase30u.a \
@@ -52,77 +53,78 @@ GetCurve-1.0: obj\resource.res obj\GetCurveApp.o obj\GetCurveMain.o obj\GetCurve
               $(LIBA)\libwxzlib.a \
               -mwindows
 
-obj\polinom.o: calc/polinom.cpp
-	$(CC) -c calc/polinom.cpp -pipe -Wall -mthreads -O2 -o obj\polinom.o
+polynom.o: calc/polynom.cpp calc/polynom.h
+	$(CC) -c calc/polynom.cpp -pipe -Wall -mthreads -O2 -o obj/polynom.o
 
-obj\wxPanelGraph.o: controls/wxPanelGraph.cpp
-	$(CC) -c controls/wxPanelGraph.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\wxPanelGraph.o
+wxPanelGraph.o: controls/wxPanelGraph.cpp controls/wxPanelGraph.h
+	$(CC) -c controls/wxPanelGraph.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/wxPanelGraph.o
 
-obj\wxCurvePanel.o: controls/wxCurvePanel.cpp
-	$(CC) -c controls/wxCurvePanel.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\wxCurvePanel.o
+wxCurvePanel.o: controls/wxCurvePanel.cpp controls/wxCurvePanel.h
+	$(CC) -c controls/wxCurvePanel.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/wxCurvePanel.o
 
-obj\imageCurve.o: controls/imageCurve.cpp
-	$(CC) -c controls/imageCurve.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\imageCurve.o
+imageCurve.o: controls/imageCurve.cpp controls/imageCurve.h
+	$(CC) -c controls/imageCurve.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/imageCurve.o
 
-obj\AboutWindow.o: dialogues/AboutWindow.cpp
-	$(CC) -c dialogues/AboutWindow.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\AboutWindow.o
+AboutWindow.o: dialogues/AboutWindow.cpp dialogues/AboutWindow.h res/picsAboutWindow.h
+	$(CC) -c dialogues/AboutWindow.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/AboutWindow.o
 
-obj\CFunctionName.o: dialogues/CFunctionName.cpp
-	$(CC) -c dialogues/CFunctionName.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\CFunctionName.o
+CFunctionName.o: dialogues/CFunctionName.cpp dialogues/CFunctionName.h
+	$(CC) -c dialogues/CFunctionName.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/CFunctionName.o
 
-obj\ColorSettings.o: dialogues/ColorSettings.cpp
-	$(CC) -c dialogues/ColorSettings.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\ColorSettings.o
+ColorSettings.o: dialogues/ColorSettings.cpp dialogues/ColorSettings.h
+	$(CC) -c dialogues/ColorSettings.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/ColorSettings.o
 
-obj\CustomScale.o: dialogues/CustomScale.cpp
-	$(CC) -c dialogues/CustomScale.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\CustomScale.o
+CustomScale.o: dialogues/CustomScale.cpp dialogues/CustomScale.h
+	$(CC) -c dialogues/CustomScale.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/CustomScale.o
 
-obj\PictureScaler.o: dialogues/PictureScaler.cpp
-	$(CC) -c dialogues/PictureScaler.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\PictureScaler.o
+PictureScaler.o: dialogues/PictureScaler.cpp dialogues/PictureScaler.h res/iconsScaleDialog.h
+	$(CC) -c dialogues/PictureScaler.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/PictureScaler.o
 
-obj\GetCurveApp.o: main/GetCurveApp.cpp
+GetCurveApp.o: main/GetCurveApp.cpp main/GetCurveApp.h
 	$(CC) -c main/GetCurveApp.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/GetCurveApp.o
 
-obj\GetCurveMain.o: main/GetCurveMain.cpp
-	$(CC) -c main/GetCurveMain.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\GetCurveMain.o
+GetCurveMain.o: main/GetCurveMain.cpp main/GetCurveMain.h res/icons.h
+	$(CC) -c main/GetCurveMain.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/GetCurveMain.o
 
-obj\GetCurveMainIO.o: main/GetCurveMainIO.cpp
-	$(CC) -c main/GetCurveMainIO.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\GetCurveMainIO.o
+GetCurveMainIO.o: main/GetCurveMainIO.cpp main/GetCurveMain.h dialogues/PictureScaler.h 
+	$(CC) -c main/GetCurveMainIO.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/GetCurveMainIO.o
 
-obj\GetCurveMainReports.o: main/GetCurveMainReports.cpp
-	$(CC) -c main/GetCurveMainReports.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\GetCurveMainReports.o
+GetCurveMainReports.o: main/GetCurveMainReports.cpp main/GetCurveMain.h dialogues/CFunctionName.h
+	$(CC) -c main/GetCurveMainReports.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/GetCurveMainReports.o
 
-obj\PolynomialWindow.o: toolboxes/PolynomialWindow.cpp
-	$(CC) -c toolboxes/PolynomialWindow.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\PolynomialWindow.o
+PolynomialWindow.o: toolboxes/PolynomialWindow.cpp toolboxes/PolynomialWindow.h
+	$(CC) -c toolboxes/PolynomialWindow.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/PolynomialWindow.o
 
-obj\OdtCreator.o: odt_creator/src/OdtCreator.cpp
-	$(CC) -c odt_creator/src/OdtCreator.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\OdtCreator.o
+OdtCreator.o: odt_creator/src/OdtCreator.cpp
+	$(CC) -c odt_creator/src/OdtCreator.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/OdtCreator.o
 
-obj\OdtCreatorArch.o: odt_creator/src/OdtCreatorArch.cpp
-	$(CC) -c odt_creator/src/OdtCreatorArch.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\OdtCreatorArch.o
+OdtCreatorArch.o: odt_creator/src/OdtCreatorArch.cpp
+	$(CC) -c odt_creator/src/OdtCreatorArch.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/OdtCreatorArch.o
 
-obj\OdtCreatorDriver.o: odt_creator/src/OdtCreatorDriver.cpp
-	$(CC) -c odt_creator/src/OdtCreatorDriver.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\OdtCreatorDriver.o
+OdtCreatorDriver.o: odt_creator/src/OdtCreatorDriver.cpp
+	$(CC) -c odt_creator/src/OdtCreatorDriver.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/OdtCreatorDriver.o
 
-obj\OdtCreatorTemplates.o: odt_creator/src/OdtCreatorTemplates.cpp
-	$(CC) -c odt_creator/src/OdtCreatorTemplates.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\OdtCreatorTemplates.o
+OdtCreatorTemplates.o: odt_creator/src/OdtCreatorTemplates.cpp
+	$(CC) -c odt_creator/src/OdtCreatorTemplates.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/OdtCreatorTemplates.o
 
-obj\OdtFormula.o: odt_creator/src/OdtFormula.cpp
-	$(CC) -c odt_creator/src/OdtFormula.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\OdtFormula.o
+OdtFormula.o: odt_creator/src/OdtFormula.cpp
+	$(CC) -c odt_creator/src/OdtFormula.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/OdtFormula.o
 
-obj\OdtImages.o: odt_creator/src/OdtImages.cpp
-	$(CC) -c odt_creator/src/OdtImages.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\OdtImages.o
+OdtImages.o: odt_creator/src/OdtImages.cpp
+	$(CC) -c odt_creator/src/OdtImages.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/OdtImages.o
 
-obj\OdtTable.o: odt_creator/src/OdtTable.cpp
-	$(CC) -c odt_creator/src/OdtTable.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj\OdtTable.o
+OdtTable.o: odt_creator/src/OdtTable.cpp
+	$(CC) -c odt_creator/src/OdtTable.cpp  $(FLAGS) -I$(LIBINCLUDE) -I$(LIBDLL) -o obj/OdtTable.o
 
-obj\resource.res: resource.rc
-	$(CRES) -I$(LIBINCLUDE) -I$(LIBDLL) -J rc -O coff -i resource.rc -o obj\resource.res
+resource.res: resource.rc
+	$(CRES) -I$(LIBINCLUDE) -I$(LIBDLL) -J rc -O coff -i resource.rc -o obj/resource.res
 
 CopyDLLs:
 	copy $(LIBA)\wxbase30u_gcc492TDM_x64.dll bin\ 
 	copy $(LIBA)\wxbase30u_xml_gcc492TDM_x64.dll bin\ 
 	copy $(LIBA)\wxmsw30u_adv_gcc492TDM_x64.dll bin\ 
 	copy $(LIBA)\wxmsw30u_core_gcc492TDM_x64.dll bin\ 
+
 clean:
 	del /Q obj
 	del /Q bin

@@ -1336,7 +1336,7 @@
 	"wx/msgdlg.h"
 	<QtWidgets/QMessageBox>
 
-1541184812 source:c:\users\petruccio\documents\c_projects\getcurve\resource.rc
+1541187395 source:c:\users\petruccio\documents\c_projects\getcurve\resource.rc
 	"wx/msw/wx.rc"
 
 1456688016 c:\wxwidgets-3.1.0_static\include\wx\msw\wx.rc
@@ -1573,9 +1573,9 @@
 1456688016 c:\wxwidgets-3.1.0_static\include\wx\qt\checkbox.h
 	<QtWidgets/QCheckBox>
 
-1541187395 c:\users\petruccio\documents\c_projects\getcurve\controls\wxpanelgraph.h
+1541709800 c:\users\petruccio\documents\c_projects\getcurve\controls\wxpanelgraph.h
 	<wx/wx.h>
-	"ImageCurve.h"
+	"imageCurve.h"
 
 1456688016 c:\wxwidgets-3.1.0_static\include\wx\wx.h
 	"wx/defs.h"
@@ -2156,7 +2156,7 @@
 
 1456688016 c:\wxwidgets-3.1.0_static\include\wx\qt\mdi.h
 
-1541582682 source:c:\users\petruccio\documents\c_projects\getcurve\controls\wxpanelgraph.cpp
+1541751320 source:c:\users\petruccio\documents\c_projects\getcurve\controls\wxpanelgraph.cpp
 	"wxPanelGraph.h"
 
 1456688016 c:\wxwidgets-3.1.0_static\include\wx\dcgraph.h
@@ -2195,8 +2195,8 @@
 
 1533709925 source:c:\users\petruccio\documents\c_projects\getcurve\src\wxcoordinateschangedevent.cpp
 
-1541187395 source:c:\users\petruccio\documents\c_projects\getcurve\controls\imagecurve.cpp
-	"ImageCurve.h"
+1541709800 source:c:\users\petruccio\documents\c_projects\getcurve\controls\imagecurve.cpp
+	"imageCurve.h"
 
 1541187395 c:\users\petruccio\documents\c_projects\getcurve\controls\imagecurve.h
 	<wx/bitmap.h>
@@ -10782,7 +10782,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1541578874 source:c:\users\petruccio\documents\c_projects\getcurve\dialogues\colorsettings.cpp
+1541709800 source:c:\users\petruccio\documents\c_projects\getcurve\dialogues\colorsettings.cpp
 	"ColorSettings.h"
 	<wx/intl.h>
 	<wx/string.h>
@@ -10797,12 +10797,13 @@
 	<wx/spinctrl.h>
 	<wx/stattext.h>
 
-1540743595 source:c:\users\petruccio\documents\c_projects\getcurve\dialogues\picturescaler.cpp
+1541709800 source:c:\users\petruccio\documents\c_projects\getcurve\dialogues\picturescaler.cpp
 	"PictureScaler.h"
 	<wx/dcclient.h>
 	<wx/msgdlg.h>
 	"../res/iconsScaleDialog.h"
 	<wx/mstream.h>
+	<wx/settings.h>
 	<wx/bitmap.h>
 	<wx/image.h>
 	<wx/intl.h>
@@ -10840,12 +10841,12 @@
 1531072045 c:\users\petruccio\documents\c_projects\getcurve\main\getcurveapp.h
 	<wx/app.h>
 
-1540751626 c:\users\petruccio\documents\c_projects\getcurve\main\getcurvemain.h
+1541583473 c:\users\petruccio\documents\c_projects\getcurve\main\getcurvemain.h
 	"../dialogues/PictureScaler.h"
 	"../dialogues/CustomScale.h"
 	"../dialogues/ColorSettings.h"
 	"../dialogues/AboutWindow.h"
-	"../calc/polinom.h"
+	"../calc/polynom.h"
 	"../controls/wxCurvePanel.h"
 	"../toolboxes/PolynomialWindow.h"
 	"../odt_creator/include/OdtCreator.h"
@@ -10861,7 +10862,7 @@
 	<wx/statusbr.h>
 	<wx/toolbar.h>
 
-1541184931 source:c:\users\petruccio\documents\c_projects\getcurve\main\getcurvemain.cpp
+1541582024 source:c:\users\petruccio\documents\c_projects\getcurve\main\getcurvemain.cpp
 	"GetCurveMain.h"
 	"../res/icons.h"
 	<wx/msgdlg.h>
@@ -10873,7 +10874,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1541182477 source:c:\users\petruccio\documents\c_projects\getcurve\main\getcurvemainio.cpp
+1541583142 source:c:\users\petruccio\documents\c_projects\getcurve\main\getcurvemainio.cpp
 	"GetCurveMain.h"
 	"../dialogues/PictureScaler.h"
 	<wx/filename.h>
@@ -10906,7 +10907,7 @@
 	<wx/string.h>
 	<wx/xml/xml.h>
 
-1534922802 source:c:\users\petruccio\documents\c_projects\getcurve\toolboxes\polynomialwindow.cpp
+1541709800 source:c:\users\petruccio\documents\c_projects\getcurve\toolboxes\polynomialwindow.cpp
 	"PolynomialWindow.h"
 	<wx/intl.h>
 	<wx/string.h>
@@ -10990,6 +10991,7 @@
 1541583455 source:c:\users\petruccio\documents\c_projects\getcurve\calc\polynom.cpp
 	"polynom.h"
 
-1541577497 c:\users\petruccio\documents\c_projects\getcurve\calc\polynom.h
+1541751320 c:\users\petruccio\documents\c_projects\getcurve\calc\polynom.h
 	"entity.h"
+	"stddef.h"
 
