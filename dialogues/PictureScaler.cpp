@@ -387,12 +387,13 @@ void PictureScaler::OnDragging(wxMouseEvent& event)
     if (!m_isDragging)  // mouse left button is not pressed
         return;
 
+    x = event.GetPosition().x;
+    y = event.GetPosition().y;
+
     if ((fabs(m_dragX - x)<DRAG_IMAGE_DELAY) ||
         (fabs(m_dragY - y)<DRAG_IMAGE_DELAY))
         return;
 
-    x = event.GetPosition().x;
-    y = event.GetPosition().y;
     m_startX -= (m_dragX - x);
     m_startY -= (m_dragY - y);
     m_dragX = x;

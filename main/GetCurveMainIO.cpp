@@ -5,6 +5,7 @@
 #include <wx/datstrm.h>
 
 const char* const FILE_SETTINGS_NAME = "GetCurve-1.0-settings.dat";
+const char* const FILE_SETTINGS_PATH = "/usr/local/share/GetCurve-1.0/"; // if binaries has been installed
 //const char* const FILE_DELIMITER = "\\"; @excluded
 const char* const FILE_IDENT = "GetCurveFile_1.0";
 const char* const FILE_IDENT_SETTINGS = "GetCurveFile_1.0_settings";
@@ -16,6 +17,15 @@ void GetCurveFrame::SaveSettingsAtExit()
     currentPath = wxGetCwd();
     currentPath<<wxFileName::GetPathSeparator()<<FILE_SETTINGS_NAME;
 
+    #ifdef __WXGTK20__
+    if (wxDir::Exists(FILE_SETTINGS_PATH))
+    {
+        currentPath = FILE_SETTINGS_PATH;
+        currentPath<<FILE_SETTINGS_NAME;    // if the file has been installed
+    }
+    #endif // __WXGTK20__
+
+
     if (wxFileExists(currentPath))
     {
         // Create file and save
@@ -25,14 +35,13 @@ void GetCurveFrame::SaveSettingsAtExit()
         {
             currentPath.Clear();
             currentPath<<"Wrong settings file "<<FILE_SETTINGS_NAME<<"! \nDelete it and restart the program!";
-            wxMessageBox(currentPath);
             return;
         }
         SaveSettings(currentPath);
     }
     else
     {
-        // Sabe settings
+        // Save settings
         SaveSettings(currentPath);
     }
 }
@@ -80,6 +89,14 @@ void GetCurveFrame::LoadSettingsOnLoad()
     currentPath = wxGetCwd();
     currentPath<<wxFileName::GetPathSeparator()<<FILE_SETTINGS_NAME;
 
+    #ifdef __WXGTK20__
+    if (wxDir::Exists(FILE_SETTINGS_PATH))
+    {
+        currentPath = FILE_SETTINGS_PATH;
+        currentPath<<FILE_SETTINGS_NAME;    // if the file has been installed
+    }
+    #endif // __WXGTK20__
+
     if (!wxFileExists(currentPath))
         return;
 
@@ -91,7 +108,6 @@ void GetCurveFrame::LoadSettingsOnLoad()
         {
             currentPath.Clear();
             currentPath<<"Cannot read "<<FILE_SETTINGS_NAME<<"!";
-            wxMessageBox(currentPath);
             return;
         }
 
