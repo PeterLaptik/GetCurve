@@ -125,6 +125,8 @@ class GetCurveFrame: public wxFrame
         void ShowAllLines(wxCommandEvent& event);
         void SaveOdtReport(wxCommandEvent& event);
         void SetCustomScale(wxCommandEvent& event);
+        void PointMinus(wxCommandEvent& event);
+        void PointPlus(wxCommandEvent& event);
         //*)
 
         //(*Identifiers(GetCurveFrame)
@@ -301,8 +303,10 @@ class GetCurveFrame: public wxFrame
         wxToolBarToolBase* ToolBarItem21;
         wxToolBarToolBase* ToolBarItem22;
         wxToolBarToolBase* ToolBarItem23;
+        wxToolBarToolBase* ToolBarItem24;
         wxToolBarToolBase* ToolBarItem2;
         wxToolBarToolBase* ToolBarItem3;
+        wxToolBarToolBase* ToolBarItem4;
         wxToolBarToolBase* ToolBarItem5;
         wxToolBarToolBase* ToolBarItem6;
         wxToolBarToolBase* ToolBarItem7;

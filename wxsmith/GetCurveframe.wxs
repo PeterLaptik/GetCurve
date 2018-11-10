@@ -563,6 +563,18 @@
 				<tooltip>Sort points</tooltip>
 				<handler function="SortPointsMenu" entry="EVT_TOOL" />
 			</object>
+			<object class="tool" name="14031" variable="ToolBarItem4" member="yes">
+				<label>Less points</label>
+				<bitmap code="GetIcon(toolbar_point_minus_png, toolbar_point_minus_png_size)" />
+				<tooltip>- point</tooltip>
+				<handler function="PointMinus" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="14032" variable="ToolBarItem24" member="yes">
+				<label>More points</label>
+				<bitmap code="GetIcon(toolbar_point_plus_png, toolbar_point_plus_png_size)" />
+				<tooltip>+ point</tooltip>
+				<handler function="PointPlus" entry="EVT_TOOL" />
+			</object>
 			<object class="tool" name="1404" variable="ToolBarItem21" member="yes">
 				<label>Stop command</label>
 				<bitmap code="GetIcon(toolbar_stop_command_png, toolbar_stop_command_png_size)" />

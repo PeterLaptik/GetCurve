@@ -31,7 +31,7 @@ AboutWindow::AboutWindow(wxWindow* parent,wxWindowID id,const wxPoint& pos,const
 	Create(parent, wxID_ANY, _("About"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("wxID_ANY"));
 	BoxSizer1 = new wxBoxSizer(wxVERTICAL);
 	BoxSizer2 = new wxBoxSizer(wxHORIZONTAL);
-	StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("GetCurve. Version 1.0 beta\nAuthor: Peter Laptik\n(e-mail: Peter.Laptik@gmail.com)\nLicence: BSD License 2.0"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT1"));
+	StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("GetCurve. Version 1.0 beta\nAuthor: Peter Laptik\ne-mail: Peter.Laptik@gmail.com\nLicence: BSD License 2.0"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT1"));
 	BoxSizer2->Add(StaticText1, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	StaticBitmap1 = new wxStaticBitmap(this, ID_STATICBITMAP1, GetIcon(logo_small_png, logo_small_png_size), wxDefaultPosition, wxDefaultSize, wxNO_BORDER, _T("ID_STATICBITMAP1"));
 	BoxSizer2->Add(StaticBitmap1, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxSHAPED, 5);

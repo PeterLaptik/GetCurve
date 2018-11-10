@@ -426,6 +426,8 @@ GetCurveFrame::GetCurveFrame(wxWindow* parent,wxWindowID id)
     ToolBarItem18 = ToolBar1->AddTool(1401, _("Add point"), GetIcon(toolbar_pick_point_png, toolbar_pick_point_png_size), wxNullBitmap, wxITEM_NORMAL, _("Pick point"), wxEmptyString);
     ToolBarItem19 = ToolBar1->AddTool(1402, _("Add point set"), GetIcon(toolbar_pick_multi_point_png, toolbar_pick_multi_point_png_size), wxNullBitmap, wxITEM_NORMAL, _("Pick point set"), wxEmptyString);
     ToolBarItem20 = ToolBar1->AddTool(1403, _("Sort points"), GetIcon(toolbar_sort_png, toolbar_sort_png_size), wxNullBitmap, wxITEM_NORMAL, _("Sort points"), wxEmptyString);
+    ToolBarItem4 = ToolBar1->AddTool(14031, _("Less points"), GetIcon(toolbar_point_minus_png, toolbar_point_minus_png_size), wxNullBitmap, wxITEM_NORMAL, _("- point"), wxEmptyString);
+    ToolBarItem24 = ToolBar1->AddTool(14032, _("More points"), GetIcon(toolbar_point_plus_png, toolbar_point_plus_png_size), wxNullBitmap, wxITEM_NORMAL, _("+ point"), wxEmptyString);
     ToolBarItem21 = ToolBar1->AddTool(1404, _("Stop command"), GetIcon(toolbar_stop_command_png, toolbar_stop_command_png_size), wxNullBitmap, wxITEM_NORMAL, _("Stop command"), wxEmptyString);
     ToolBar1->AddSeparator();
     ToolBarItem8 = ToolBar1->AddTool(1201, _("Zoom In"), GetIcon(toolbar_zoom_in_png, toolbar_zoom_in_png_size), wxNullBitmap, wxITEM_NORMAL, _("Zoom in"), wxEmptyString);
@@ -534,6 +536,8 @@ GetCurveFrame::GetCurveFrame(wxWindow* parent,wxWindowID id)
     Connect(1401,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&GetCurveFrame::PickPoint);
     Connect(1402,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&GetCurveFrame::PickMultiPoint);
     Connect(1403,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&GetCurveFrame::SortPointsMenu);
+    Connect(14031,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&GetCurveFrame::PointMinus);
+    Connect(14032,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&GetCurveFrame::PointPlus);
     Connect(1404,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&GetCurveFrame::StopCommandPopUpMenu);
     Connect(1201,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&GetCurveFrame::ZoomIn);
     Connect(1202,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&GetCurveFrame::ZoomOut);
@@ -1112,14 +1116,22 @@ void GetCurveFrame::PointHasBeenPicked(wxCommandEvent& event)
 
 void GetCurveFrame::StopCommandPopUpMenu(wxCommandEvent& event)
 {
+    /*
     wxString textOut;
-    PanelGraph->SelectPoint(-1);
     PanelGraph->SetForPointPick(false);
+    PanelGraph->SelectPoint(NO_POINT_SELECTED);
     isPick = NO_PICK;
     textOut.Clear();
     textOut<<"Selected point: no point";
     StatusBar1->SetStatusText(textOut, 1);
+    wxMessageBox(_T("OOO"));
     PanelGraph->Refresh();
+    */
+
+    wxMouseEvent eventToSend;
+    PanelGraph->SetForPointPick(false);
+    PanelGraph->SelectPoint(NO_POINT_SELECTED);
+    ClearSelected(eventToSend);
 }
 
 void GetCurveFrame::ZoomIn(wxCommandEvent& event)
@@ -1405,4 +1417,18 @@ void GetCurveFrame::SetCustomScale(wxCommandEvent& event)
     dlg->SetPanel(PanelGraph);
     dlg->ShowModal();
     delete dlg;
+}
+
+void GetCurveFrame::PointMinus(wxCommandEvent& event)
+{
+    wxSpinEvent myEvent;
+    SpinCtrl1->SetValue(SpinCtrl1->GetValue()-1);
+    PointChanged(myEvent);
+}
+
+void GetCurveFrame::PointPlus(wxCommandEvent& event)
+{
+    wxSpinEvent myEvent;
+    SpinCtrl1->SetValue(SpinCtrl1->GetValue()+1);
+    PointChanged(myEvent);
 }

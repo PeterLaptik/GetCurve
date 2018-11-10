@@ -10,7 +10,7 @@
 				<object class="wxBoxSizer" variable="BoxSizer2" member="no">
 					<object class="sizeritem">
 						<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
-							<label>GetCurve. Version 1.0 beta&#x0A;Author: Peter Laptik&#x0A;(e-mail: Peter.Laptik@gmail.com)&#x0A;Licence: BSD License 2.0</label>
+							<label>GetCurve. Version 1.0 beta&#x0A;Author: Peter Laptik&#x0A;e-mail: Peter.Laptik@gmail.com&#x0A;Licence: BSD License 2.0</label>
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>

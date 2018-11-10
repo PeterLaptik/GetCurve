@@ -56,8 +56,10 @@ PointChoosing ptCurrent;    // current picking state
 const double m_minScale = 0.25;
 const double m_maxScale = 4;
 const double scaleCoefficient = 1.1;
-const int DRAG_IMAGE_DELAY = 10;
 const int ORDER_BY_DEFAULT = 10;
+/* turned down:
+const int DRAG_IMAGE_DELAY = 2;
+*/
 
 PictureScaler::PictureScaler(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
 {
@@ -390,9 +392,11 @@ void PictureScaler::OnDragging(wxMouseEvent& event)
     x = event.GetPosition().x;
     y = event.GetPosition().y;
 
+    /* turned down:
     if ((fabs(m_dragX - x)<DRAG_IMAGE_DELAY) ||
         (fabs(m_dragY - y)<DRAG_IMAGE_DELAY))
         return;
+    */
 
     m_startX -= (m_dragX - x);
     m_startY -= (m_dragY - y);
