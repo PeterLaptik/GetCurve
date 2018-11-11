@@ -14,7 +14,7 @@ FILETYPE VFT_APP
 		 {
 			 VALUE "CompanyName", ""
 			 VALUE "FileVersion", ""
-			 VALUE "FileDescription", "Finding coefficients of a polynomial"
+			 VALUE "FileDescription", "Polynomial interpolation"
 			 VALUE "InternalName", ""
 			 VALUE "LegalCopyright", "Peter Laptik (c) 2018"
 			 VALUE "LegalTrademarks", ""
