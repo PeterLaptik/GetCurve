@@ -124,6 +124,8 @@ CopyDLLs:
 	copy $(LIBA)\wxbase30u_xml_gcc492TDM_x64.dll bin\ 
 	copy $(LIBA)\wxmsw30u_adv_gcc492TDM_x64.dll bin\ 
 	copy $(LIBA)\wxmsw30u_core_gcc492TDM_x64.dll bin\ 
+	copy README.txt bin\ 
+	copy LICENSE.txt bin\
 
 clean:
 	del /Q obj
