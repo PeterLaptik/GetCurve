@@ -11,6 +11,8 @@ Outputs results as:
  - CSV table of a polynomial coefficients;
  - C-function for calculating any polynomial values;
  - ODT text document with tables and images.
+ 
+![github-small](https://user-images.githubusercontent.com/32104993/48665206-a69ea980-eabb-11e8-8816-2b1ab57ff509.png)
 
 ## Installation (Windows)
 The program has no installer: just download and unpack release archive.
