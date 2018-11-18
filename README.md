@@ -15,7 +15,7 @@ Outputs results as:
 ![github-small](https://user-images.githubusercontent.com/32104993/48665206-a69ea980-eabb-11e8-8816-2b1ab57ff509.png)
 
 ## Installation (Windows)
-The program has no installer: just download and unpack release archive.
+The program has no installer: just download and unpack [release archive](https://github.com/PeterLaptik/GetCurve/releases).
 It includes binary file and all necessary libraries.
 
 ## Assembling
