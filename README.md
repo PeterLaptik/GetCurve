@@ -1,6 +1,6 @@
 # GetCurve
 
-A GUI program for polynomial interpolation. Computes up to 20 data points.
+A GUI application for polynomial interpolation. Computes up to 20 data points.
 Displays linear and logarithmic scales.
 Data points can be inputed by hand or mouse picking
 (an external image can be scaled and underlaid on screen).
