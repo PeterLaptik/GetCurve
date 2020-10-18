@@ -297,10 +297,10 @@ double CurvePanel::RecalcStepForLogarithimc(double currentXValue,
 void CurvePanel::CoordinatesOutput()
 {
     wxString textOut;
-    wxCommandEvent *m_event = new wxCommandEvent(EVT_CHANGED_XY);
+    wxCommandEvent m_event = wxCommandEvent(EVT_CHANGED_XY);
     textOut<<"x = "<<m_x<<"  y = "<<m_y;
-    m_event->SetString(textOut);
-    wxPostEvent(this, *m_event);
+    m_event.SetString(textOut);
+    wxPostEvent(this, m_event);
 }
 
 // Check points
