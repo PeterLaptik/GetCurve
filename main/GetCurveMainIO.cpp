@@ -506,14 +506,14 @@ bool GetCurveFrame::AskUserDialogue(const wxString &question, const wxString &he
     {
         case wxID_YES:
         {
-            return true;
             delete msg;
+            return true;
             break;
         }
         case wxID_NO:
         {
-            return false;
             delete msg;
+            return false;
             break;
         }
     }
